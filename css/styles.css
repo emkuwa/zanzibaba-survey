@@ -310,9 +310,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: -40px;
 }
 
-/* Spacer to push content below fixed header */
+/* Dynamic header height via CSS custom property */
+:root {
+    --header-height: 100px;
+}
+
 .header-spacer {
-    height: 100px;
+    height: var(--header-height);
 }
 
 /* ============================================
@@ -325,7 +329,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     background: var(--primary);
     overflow: hidden;
-    padding-top: 100px;
+    padding-top: var(--header-height);
 }
 
 .header-top-bar {
@@ -569,19 +573,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-menu-btn.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* ============================================
-   HERO SECTION
-   ============================================ */
-.hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: var(--primary);
-    overflow: hidden;
-    padding-top: 100px;
 }
 
 .hero-bg {
@@ -1641,7 +1632,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
-    :root { --container-padding: 1rem; }
+    :root { 
+        --container-padding: 1rem;
+        --header-height: 60px;
+    }
     
     .section { padding: var(--spacing-4xl) 0; }
     
@@ -1650,7 +1644,6 @@ h1, h2, h3, h4, h5, h6 {
     
     .header-top-bar { display: none; }
     .header.scrolled .header-top-bar { margin-top: 0; }
-    .header-spacer { height: 60px; }
     
     .page-header { padding: 7rem 0 3rem; }
     
@@ -1685,6 +1678,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 480px) {
+    :root { --header-height: 56px; }
     .page-header { padding: 6rem 0 2.5rem; }
     .hero { padding: 6rem 0 3rem; }
     .hero h1 { font-size: 1.75rem; }
