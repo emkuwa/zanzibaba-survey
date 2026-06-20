@@ -310,9 +310,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: -40px;
 }
 
-/* Dynamic header height via CSS custom property */
+/* Dynamic header height - JS calculates actual value */
 :root {
-    --header-height: 100px;
+    --header-height: 116px;
 }
 
 .header-spacer {
@@ -1634,7 +1634,6 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
     :root { 
         --container-padding: 1rem;
-        --header-height: 60px;
     }
     
     .section { padding: var(--spacing-4xl) 0; }
@@ -1678,7 +1677,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 480px) {
-    :root { --header-height: 56px; }
     .page-header { padding: 6rem 0 2.5rem; }
     .hero { padding: 6rem 0 3rem; }
     .hero h1 { font-size: 1.75rem; }

@@ -4,8 +4,44 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Header Scroll Effect
-    const header = document.getElementById('header');
+    // ========================================
+    // DYNAMIC HEADER HEIGHT + SPACER
+    // ========================================
+    const header = document.querySelector('.header');
+
+    function updateHeaderHeight() {
+        if (!header) return;
+        const height = header.offsetHeight;
+        document.documentElement.style.setProperty('--header-height', `${height}px`);
+
+        // Update or create spacer
+        let spacer = document.querySelector('.header-spacer');
+        if (!spacer) {
+            spacer = document.createElement('div');
+            spacer.className = 'header-spacer';
+            header.parentNode.insertBefore(spacer, header.nextSibling);
+        }
+        spacer.style.height = `${height}px`;
+    }
+
+    // Calculate on load
+    updateHeaderHeight();
+
+    // Recalculate on resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(updateHeaderHeight, 100);
+    });
+
+    // Recalculate after fonts load
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(updateHeaderHeight);
+    }
+
+    // ========================================
+    // HEADER SCROLL EFFECT
+    // ========================================
     let lastScroll = 0;
     
     window.addEventListener('scroll', function() {
