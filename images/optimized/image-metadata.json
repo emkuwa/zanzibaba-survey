@@ -1,0 +1,518 @@
+{
+  "HERO IMAGE3.png": {
+    "category": "hero",
+    "alt": "Professional survey team conducting topographical survey in Zanzibar",
+    "dimensions": {
+      "original_width": 1536,
+      "original_height": 1024,
+      "variants": [
+        {
+          "size": 1920,
+          "width": 1920,
+          "height": 1280,
+          "webp_path": "HERO IMAGE3-1920w.webp",
+          "webp_size_kb": 247.8
+        },
+        {
+          "size": 1200,
+          "width": 1200,
+          "height": 800,
+          "webp_path": "HERO IMAGE3-1200w.webp",
+          "webp_size_kb": 143.6
+        },
+        {
+          "size": 768,
+          "width": 768,
+          "height": 512,
+          "webp_path": "HERO IMAGE3-768w.webp",
+          "webp_size_kb": 77.3
+        },
+        {
+          "size": 480,
+          "width": 480,
+          "height": 320,
+          "webp_path": "HERO IMAGE3-480w.webp",
+          "webp_size_kb": 36.4
+        }
+      ],
+      "alt": "Professional survey team conducting topographical survey in Zanzibar"
+    }
+  },
+  "HERO IMAGE4.png": {
+    "category": "hero",
+    "alt": "Aerial drone survey of Zanzibar coastline for mapping project",
+    "dimensions": {
+      "original_width": 1536,
+      "original_height": 1024,
+      "variants": [
+        {
+          "size": 1920,
+          "width": 1920,
+          "height": 1280,
+          "webp_path": "HERO IMAGE4-1920w.webp",
+          "webp_size_kb": 224.9
+        },
+        {
+          "size": 1200,
+          "width": 1200,
+          "height": 800,
+          "webp_path": "HERO IMAGE4-1200w.webp",
+          "webp_size_kb": 128.3
+        },
+        {
+          "size": 768,
+          "width": 768,
+          "height": 512,
+          "webp_path": "HERO IMAGE4-768w.webp",
+          "webp_size_kb": 67.9
+        },
+        {
+          "size": 480,
+          "width": 480,
+          "height": 320,
+          "webp_path": "HERO IMAGE4-480w.webp",
+          "webp_size_kb": 32.8
+        }
+      ],
+      "alt": "Aerial drone survey of Zanzibar coastline for mapping project"
+    }
+  },
+  "WHY CHOOSE US IMAGE.png": {
+    "category": "section",
+    "alt": "Licensed surveyors using advanced GNSS equipment in Zanzibar",
+    "dimensions": {
+      "original_width": 1536,
+      "original_height": 1024,
+      "variants": [
+        {
+          "size": 1200,
+          "width": 1200,
+          "height": 800,
+          "webp_path": "WHY CHOOSE US IMAGE-1200w.webp",
+          "webp_size_kb": 147.9
+        },
+        {
+          "size": 768,
+          "width": 768,
+          "height": 512,
+          "webp_path": "WHY CHOOSE US IMAGE-768w.webp",
+          "webp_size_kb": 76.3
+        },
+        {
+          "size": 480,
+          "width": 480,
+          "height": 320,
+          "webp_path": "WHY CHOOSE US IMAGE-480w.webp",
+          "webp_size_kb": 36.6
+        }
+      ],
+      "alt": "Licensed surveyors using advanced GNSS equipment in Zanzibar"
+    }
+  },
+  "RESORT DEVELOPMENT PROJECT.png": {
+    "category": "card",
+    "alt": "Topographical survey for luxury resort development in Nungwi Zanzibar",
+    "dimensions": {
+      "original_width": 1536,
+      "original_height": 1024,
+      "variants": [
+        {
+          "size": 768,
+          "width": 768,
+          "height": 512,
+          "webp_path": "RESORT DEVELOPMENT PROJECT-768w.webp",
+          "webp_size_kb": 101.4
+        },
+        {
+          "size": 480,
+          "width": 480,
+          "height": 320,
+          "webp_path": "RESORT DEVELOPMENT PROJECT-480w.webp",
+          "webp_size_kb": 41.9
+        }
+      ],
+      "alt": "Topographical survey for luxury resort development in Nungwi Zanzibar"
+    }
+  },
+  "LAND SUBDIVISION PROJECT.png": {
+    "category": "card",
+    "alt": "Plot subdivision survey for residential development in Zanzibar",
+    "dimensions": {
+      "original_width": 1536,
+      "original_height": 1024,
+      "variants": [
+        {
+          "size": 768,
+          "width": 768,
+          "height": 512,
+          "webp_path": "LAND SUBDIVISION PROJECT-768w.webp",
+          "webp_size_kb": 98.5
+        },
+        {
+          "size": 480,
+          "width": 480,
+          "height": 320,
+          "webp_path": "LAND SUBDIVISION PROJECT-480w.webp",
+          "webp_size_kb": 41.0
+        }
+      ],
+      "alt": "Plot subdivision survey for residential development in Zanzibar"
+    }
+  },
+  "INFRASTRUCTURE SURVEY PROJECT.png": {
+    "category": "card",
+    "alt": "Engineering survey for coastal road infrastructure project Zanzibar",
+    "dimensions": {
+      "original_width": 1536,
+      "original_height": 1024,
+      "variants": [
+        {
+          "size": 768,
+          "width": 768,
+          "height": 512,
+          "webp_path": "INFRASTRUCTURE SURVEY PROJECT-768w.webp",
+          "webp_size_kb": 70.0
+        },
+        {
+          "size": 480,
+          "width": 480,
+          "height": 320,
+          "webp_path": "INFRASTRUCTURE SURVEY PROJECT-480w.webp",
+          "webp_size_kb": 37.7
+        }
+      ],
+      "alt": "Engineering survey for coastal road infrastructure project Zanzibar"
+    }
+  },
+  "COASTAL MAPPING PROJECT.png": {
+    "category": "card",
+    "alt": "Hydrographic survey vessel mapping coastal waters Zanzibar",
+    "dimensions": {
+      "original_width": 1536,
+      "original_height": 1024,
+      "variants": [
+        {
+          "size": 768,
+          "width": 768,
+          "height": 512,
+          "webp_path": "COASTAL MAPPING PROJECT-768w.webp",
+          "webp_size_kb": 81.6
+        },
+        {
+          "size": 480,
+          "width": 480,
+          "height": 320,
+          "webp_path": "COASTAL MAPPING PROJECT-480w.webp",
+          "webp_size_kb": 37.4
+        }
+      ],
+      "alt": "Hydrographic survey vessel mapping coastal waters Zanzibar"
+    }
+  },
+  "GNSS EQUIPMENT IMAGE.png": {
+    "category": "card",
+    "alt": "GNSS RTK survey equipment for centimeter accuracy positioning Zanzibar",
+    "dimensions": {
+      "original_width": 1536,
+      "original_height": 1024,
+      "variants": [
+        {
+          "size": 768,
+          "width": 768,
+          "height": 512,
+          "webp_path": "GNSS EQUIPMENT IMAGE-768w.webp",
+          "webp_size_kb": 58.4
+        },
+        {
+          "size": 480,
+          "width": 480,
+          "height": 320,
+          "webp_path": "GNSS EQUIPMENT IMAGE-480w.webp",
+          "webp_size_kb": 29.4
+        }
+      ],
+      "alt": "GNSS RTK survey equipment for centimeter accuracy positioning Zanzibar"
+    }
+  },
+  "ROBOTIC TOTAL STATION.png": {
+    "category": "card",
+    "alt": "Robotic total station for precision angle and distance measurements",
+    "dimensions": {
+      "original_width": 1536,
+      "original_height": 1024,
+      "variants": [
+        {
+          "size": 768,
+          "width": 768,
+          "height": 512,
+          "webp_path": "ROBOTIC TOTAL STATION-768w.webp",
+          "webp_size_kb": 50.7
+        },
+        {
+          "size": 480,
+          "width": 480,
+          "height": 320,
+          "webp_path": "ROBOTIC TOTAL STATION-480w.webp",
+          "webp_size_kb": 28.6
+        }
+      ],
+      "alt": "Robotic total station for precision angle and distance measurements"
+    }
+  },
+  "SURVEY DRONE.png": {
+    "category": "card",
+    "alt": "DJI Matrice survey drone for aerial mapping photogrammetry Zanzibar",
+    "dimensions": {
+      "original_width": 1536,
+      "original_height": 1024,
+      "variants": [
+        {
+          "size": 768,
+          "width": 768,
+          "height": 512,
+          "webp_path": "SURVEY DRONE-768w.webp",
+          "webp_size_kb": 72.5
+        },
+        {
+          "size": 480,
+          "width": 480,
+          "height": 320,
+          "webp_path": "SURVEY DRONE-480w.webp",
+          "webp_size_kb": 36.0
+        }
+      ],
+      "alt": "DJI Matrice survey drone for aerial mapping photogrammetry Zanzibar"
+    }
+  },
+  "Hydrographic Survey Image.png": {
+    "category": "card",
+    "alt": "Echo sounder hydrographic survey equipment for bathymetric mapping",
+    "dimensions": {
+      "original_width": 1536,
+      "original_height": 1024,
+      "variants": [
+        {
+          "size": 768,
+          "width": 768,
+          "height": 512,
+          "webp_path": "Hydrographic Survey Image-768w.webp",
+          "webp_size_kb": 74.8
+        },
+        {
+          "size": 480,
+          "width": 480,
+          "height": 320,
+          "webp_path": "Hydrographic Survey Image-480w.webp",
+          "webp_size_kb": 31.4
+        }
+      ],
+      "alt": "Echo sounder hydrographic survey equipment for bathymetric mapping"
+    }
+  },
+  "GIS & Mapping Image.png": {
+    "category": "card",
+    "alt": "GIS mapping software displaying spatial data analysis Zanzibar",
+    "dimensions": {
+      "original_width": 1536,
+      "original_height": 1024,
+      "variants": [
+        {
+          "size": 768,
+          "width": 768,
+          "height": 512,
+          "webp_path": "GIS & Mapping Image-768w.webp",
+          "webp_size_kb": 62.4
+        },
+        {
+          "size": 480,
+          "width": 480,
+          "height": 320,
+          "webp_path": "GIS & Mapping Image-480w.webp",
+          "webp_size_kb": 32.2
+        }
+      ],
+      "alt": "GIS mapping software displaying spatial data analysis Zanzibar"
+    }
+  },
+  "Education Hub Banner.png": {
+    "category": "section",
+    "alt": "Surveying education and professional training resources",
+    "dimensions": {
+      "original_width": 1536,
+      "original_height": 1024,
+      "variants": [
+        {
+          "size": 1200,
+          "width": 1200,
+          "height": 800,
+          "webp_path": "Education Hub Banner-1200w.webp",
+          "webp_size_kb": 112.1
+        },
+        {
+          "size": 768,
+          "width": 768,
+          "height": 512,
+          "webp_path": "Education Hub Banner-768w.webp",
+          "webp_size_kb": 63.7
+        },
+        {
+          "size": 480,
+          "width": 480,
+          "height": 320,
+          "webp_path": "Education Hub Banner-480w.webp",
+          "webp_size_kb": 33.1
+        }
+      ],
+      "alt": "Surveying education and professional training resources"
+    }
+  },
+  "SERVICE AREAS MAP.png": {
+    "category": "section",
+    "alt": "Service coverage map showing survey operations across Zanzibar archipelago",
+    "dimensions": {
+      "original_width": 1536,
+      "original_height": 1024,
+      "variants": [
+        {
+          "size": 1200,
+          "width": 1200,
+          "height": 800,
+          "webp_path": "SERVICE AREAS MAP-1200w.webp",
+          "webp_size_kb": 130.7
+        },
+        {
+          "size": 768,
+          "width": 768,
+          "height": 512,
+          "webp_path": "SERVICE AREAS MAP-768w.webp",
+          "webp_size_kb": 57.6
+        },
+        {
+          "size": 480,
+          "width": 480,
+          "height": 320,
+          "webp_path": "SERVICE AREAS MAP-480w.webp",
+          "webp_size_kb": 23.9
+        }
+      ],
+      "alt": "Service coverage map showing survey operations across Zanzibar archipelago"
+    }
+  },
+  "TESTIMONIALS SECTION BACKGROUND.png": {
+    "category": "hero",
+    "alt": "Satisfied clients testimonial section background Zanzibar survey",
+    "dimensions": {
+      "original_width": 1672,
+      "original_height": 941,
+      "variants": [
+        {
+          "size": 1920,
+          "width": 1920,
+          "height": 1080,
+          "webp_path": "TESTIMONIALS SECTION BACKGROUND-1920w.webp",
+          "webp_size_kb": 317.7
+        },
+        {
+          "size": 1200,
+          "width": 1200,
+          "height": 675,
+          "webp_path": "TESTIMONIALS SECTION BACKGROUND-1200w.webp",
+          "webp_size_kb": 175.1
+        },
+        {
+          "size": 768,
+          "width": 768,
+          "height": 432,
+          "webp_path": "TESTIMONIALS SECTION BACKGROUND-768w.webp",
+          "webp_size_kb": 81.8
+        },
+        {
+          "size": 480,
+          "width": 480,
+          "height": 270,
+          "webp_path": "TESTIMONIALS SECTION BACKGROUND-480w.webp",
+          "webp_size_kb": 35.4
+        }
+      ],
+      "alt": "Satisfied clients testimonial section background Zanzibar survey"
+    }
+  },
+  "FINAL CTA SECTION.png": {
+    "category": "hero",
+    "alt": "Contact Zanzibaba Survey for professional surveying services in Zanzibar",
+    "dimensions": {
+      "original_width": 1825,
+      "original_height": 862,
+      "variants": [
+        {
+          "size": 1920,
+          "width": 1920,
+          "height": 906,
+          "webp_path": "FINAL CTA SECTION-1920w.webp",
+          "webp_size_kb": 382.9
+        },
+        {
+          "size": 1200,
+          "width": 1200,
+          "height": 566,
+          "webp_path": "FINAL CTA SECTION-1200w.webp",
+          "webp_size_kb": 181.3
+        },
+        {
+          "size": 768,
+          "width": 768,
+          "height": 362,
+          "webp_path": "FINAL CTA SECTION-768w.webp",
+          "webp_size_kb": 80.9
+        },
+        {
+          "size": 480,
+          "width": 480,
+          "height": 226,
+          "webp_path": "FINAL CTA SECTION-480w.webp",
+          "webp_size_kb": 33.1
+        }
+      ],
+      "alt": "Contact Zanzibaba Survey for professional surveying services in Zanzibar"
+    }
+  },
+  "CTA Section Background.png": {
+    "category": "hero",
+    "alt": "Professional survey services call to action background Zanzibar",
+    "dimensions": {
+      "original_width": 1983,
+      "original_height": 793,
+      "variants": [
+        {
+          "size": 1920,
+          "width": 1920,
+          "height": 767,
+          "webp_path": "CTA Section Background-1920w.webp",
+          "webp_size_kb": 346.7
+        },
+        {
+          "size": 1200,
+          "width": 1200,
+          "height": 479,
+          "webp_path": "CTA Section Background-1200w.webp",
+          "webp_size_kb": 154.2
+        },
+        {
+          "size": 768,
+          "width": 768,
+          "height": 307,
+          "webp_path": "CTA Section Background-768w.webp",
+          "webp_size_kb": 66.1
+        },
+        {
+          "size": 480,
+          "width": 480,
+          "height": 191,
+          "webp_path": "CTA Section Background-480w.webp",
+          "webp_size_kb": 26.8
+        }
+      ],
+      "alt": "Professional survey services call to action background Zanzibar"
+    }
+  }
+}
