@@ -306,6 +306,56 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Education Hub Search
+    const eduSearch = document.getElementById('eduSearch');
+    const eduCards = document.querySelectorAll('.edu-card');
+    const eduTags = document.querySelectorAll('.edu-tag');
+    
+    if (eduSearch) {
+        eduSearch.addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
+            
+            eduCards.forEach(card => {
+                const title = (card.querySelector('h3')?.textContent || '').toLowerCase();
+                const desc = (card.querySelector('p')?.textContent || '').toLowerCase();
+                const keywords = (card.dataset.keywords || '').toLowerCase();
+                const category = (card.dataset.category || '').toLowerCase();
+                
+                const matches = !query || 
+                    title.includes(query) || 
+                    desc.includes(query) || 
+                    keywords.includes(query) || 
+                    category.includes(query);
+                
+                card.style.display = matches ? '' : 'none';
+                card.style.opacity = matches ? '1' : '0';
+            });
+            
+            // Reset tag filter to "All"
+            eduTags.forEach(tag => tag.classList.remove('active'));
+            document.querySelector('.edu-tag[data-filter="all"]')?.classList.add('active');
+        });
+    }
+    
+    // Education Hub Tag Filter
+    eduTags.forEach(tag => {
+        tag.addEventListener('click', function() {
+            const filter = this.dataset.filter;
+            
+            eduTags.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            if (eduSearch) eduSearch.value = '';
+            
+            eduCards.forEach(card => {
+                const category = card.dataset.category || '';
+                const matches = filter === 'all' || category === filter;
+                card.style.display = matches ? '' : 'none';
+                card.style.opacity = matches ? '1' : '0';
+            });
+        });
+    });
+    
     // Counter animation for hero stats
     function animateCounters() {
         const counters = document.querySelectorAll('.hero-stat-number');
