@@ -2519,6 +2519,187 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
+   VILLA INVESTOR PAGE: Mobile-First Large Text
+   ============================================ */
+.hero-villa .hero-title {
+    font-size: clamp(2.5rem, 10vw, 4.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+}
+.hero-villa .hero-title .highlight {
+    color: var(--accent);
+    font-weight: 900;
+}
+.hero-villa .hero-subtitle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+.hero-villa .subtitle-item {
+    font-size: 1.05rem;
+    font-weight: 700;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 0.6rem 1.2rem;
+    border-radius: 2rem;
+    color: var(--gray-200);
+    letter-spacing: 0.02em;
+}
+.hero-villa .hero-description {
+    font-size: 1.25rem;
+    line-height: 1.75;
+    max-width: 560px;
+    color: rgba(255,255,255,0.85);
+}
+.hero-villa .hero-stat-number {
+    font-size: 3rem;
+    font-weight: 900;
+}
+.hero-villa .hero-stat-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-300);
+}
+
+/* Infographic Cards */
+.villa-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+.benefit-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-2xl);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+.benefit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--accent);
+}
+.benefit-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 1rem 0 0.75rem;
+    letter-spacing: -0.01em;
+}
+.benefit-card p {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--gray-600);
+}
+.benefit-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.benefit-icon .icon {
+    width: 32px;
+    height: 32px;
+    color: var(--primary);
+    stroke-width: 2.5;
+}
+
+/* Pricing Section */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+.pricing-card {
+    background: var(--white);
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-2xl);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.pricing-card.featured {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(212,168,67,0.1);
+    transform: scale(1.04);
+}
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+.pricing-card.featured:hover {
+    transform: translateY(-8px) scale(1.04);
+}
+.pricing-header h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+}
+.pricing-price {
+    margin-bottom: 1.5rem;
+}
+.price-amount {
+    font-size: 2.75rem;
+    font-weight: 900;
+    color: var(--accent-dark);
+    line-height: 1;
+}
+.price-period {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--gray-500);
+    font-weight: 600;
+    margin-top: 0.25rem;
+}
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 2rem;
+}
+.pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.05rem;
+    padding: 0.5rem 0;
+    color: var(--gray-700);
+    border-bottom: 1px solid var(--gray-100);
+    font-weight: 600;
+}
+.pricing-features li:last-child {
+    border-bottom: none;
+}
+.pricing-features .icon-check {
+    width: 20px;
+    height: 20px;
+    color: var(--success);
+    flex-shrink: 0;
+    stroke-width: 3;
+}
+
+/* Mobile adjustments */
+@media (max-width: 1024px) {
+    .villa-benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    .pricing-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+    .villa-benefits-grid { grid-template-columns: 1fr; }
+    .pricing-card.featured { transform: none; }
+    .pricing-card.featured:hover { transform: translateY(-8px); }
+}
+
+/* ============================================
    IMAGE STYLES
    ============================================ */
 
