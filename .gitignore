@@ -1,1 +1,6 @@
 .vercel
+.codex-state/
+codex_config_backup.toml
+state_5_test.sqlite
+~/
+.DS_Store
