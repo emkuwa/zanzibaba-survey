@@ -1,9 +1,48 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://survey.zanzibaba.com/sitemap.xml
-
 Disallow: /admin/
 Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /private/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: Anthropic-ai
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: meta-externalagent
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://survey.zanzibaba.com/sitemap.xml
