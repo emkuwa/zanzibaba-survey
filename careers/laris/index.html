@@ -9,11 +9,13 @@
 <style>
 :root{font-family:system-ui,-apple-system,Arial,sans-serif;color:#193044;background:#f4f6f8;line-height:1.6;color-scheme:light}
 *{box-sizing:border-box}body{margin:0}a{color:#135078;overflow-wrap:anywhere}header{background:#142d42;color:#fff}header nav{max-width:900px;margin:auto;padding:16px 20px;display:flex;align-items:center;flex-wrap:wrap;gap:16px}header a{color:#fff}header strong{margin-right:auto;letter-spacing:2px}main{max-width:800px;margin:auto;padding:24px 16px 48px}h1{font-size:clamp(1.8rem,5vw,2.7rem);line-height:1.2;margin:12px 0}h2{font-size:1.35rem;line-height:1.3;margin:0 0 16px}h3{font-size:1.1rem}p{margin:12px 0}.hero{background:#142d42;color:#fff;border-radius:18px;padding:28px}.hero a{color:#fff}.eyebrow{color:#f6d58d;font-weight:700;font-size:.9rem}.deadline{font-weight:700}.card{background:white;border:1px solid #d9e0e7;border-radius:14px;padding:24px;margin-top:20px}.muted,small{color:#4c6070}.notice{padding:14px 0}.steps{display:flex;flex-wrap:wrap;gap:12px 24px;padding-left:22px;font-weight:650}label{display:block;font-weight:650}input,textarea{display:block;width:100%;font:inherit;color:inherit;background:#fff;border:1px solid #8496a5;border-radius:8px;padding:12px;margin:6px 0 18px}textarea{resize:vertical}button,.button{font:inherit;font-weight:700;min-height:44px;border:0;border-radius:8px;padding:11px 16px;cursor:pointer;background:#e6b855;color:#142d42;text-decoration:none;display:inline-block}button.secondary{background:#e7edf2}button:disabled{opacity:.5;cursor:wait}button:hover,.button:hover{filter:brightness(.95)}:focus-visible{outline:3px solid #1976b9;outline-offset:4px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}summary{cursor:pointer;min-height:44px;padding:8px 0;font-weight:700}details>div{padding-top:12px}.status{min-height:1.6em;margin:8px 0}.check{display:flex;gap:10px;align-items:flex-start;margin:12px 0;font-weight:400}.check input{width:22px;height:22px;flex-shrink:0;margin:3px 0}.documents textarea{font-size:1rem;line-height:1.65}footer{text-align:center;padding:0 16px 30px}.skip{position:absolute;left:12px;top:-100px;background:white;padding:10px;z-index:2}.skip:focus{top:8px}#photo-preview{width:100px;height:120px;object-fit:cover;border-radius:6px}#print-area{display:none}[hidden]{display:none!important}@media(min-width:600px){.fields{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}}@media(max-width:400px){.card,.hero{padding:18px}header nav{gap:12px}button,.button{max-width:100%}}@page{size:A4;margin:20mm}@media print{body{background:white;color:#000}body>*{display:none!important}body>#print-area{display:block!important}#print-area{font:11pt Arial,sans-serif;line-height:1.6}#print-area article{white-space:pre-wrap;overflow-wrap:anywhere}#print-area article+article{break-before:page}#print-area img{width:100px;height:120px;object-fit:cover;float:right;margin:0 0 16px 20px}}
+
+.language-switch{display:inline-flex;flex-wrap:wrap;gap:4px;padding:4px;border:1px solid #9aafbd;border-radius:10px}.language-switch button{background:transparent;color:inherit;padding:7px 12px;font-size:.9rem}.language-switch button[aria-pressed="true"]{background:#e6b855;color:#142d42}.document-toolbar{margin:18px 0}.document-toolbar p{margin-bottom:6px}.paper{background:#fff;color:#172b3a;padding:28px;border:1px solid #d6dee5;box-shadow:0 3px 14px #142d420a;margin:18px 0;font:15px/1.65 Georgia,'Times New Roman',serif;overflow-wrap:anywhere}.paper p{white-space:pre-wrap;margin:0 0 16px}.paper .cv-header{border-bottom:3px solid #193f59;padding-bottom:16px;margin-bottom:22px}.paper .cv-header h2{font:700 clamp(22px,5vw,32px)/1.2 system-ui,sans-serif;margin:0 0 8px}.paper .cv-subtitle{font:700 11px/1.5 system-ui,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#40586a;margin:0 0 12px}.paper .cv-contact{font:13px/1.7 system-ui,sans-serif;margin:0}.paper h3{font:700 12px/1.4 system-ui,sans-serif;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid #d5dfe6;padding-bottom:6px;margin:22px 0 10px;break-after:avoid}.paper .cv-photo{width:85px;height:105px;object-fit:cover;float:right;margin:0 0 12px 18px}.paper .cv-header:after{content:"";display:block;clear:both}.paper .sender{text-align:right;font-size:14px;margin-bottom:18px}.paper .letter-date{text-align:right;color:#40586a;font-size:14px}.paper .letter-subject{font-weight:700;border-bottom:1px solid #b7c6d1;padding-bottom:12px;margin-top:22px}.paper .signature{margin-top:24px}.paper .signature strong{display:block;margin-top:22px;font-family:system-ui,sans-serif}.edit-document{margin-bottom:22px}.document-caption{margin-top:26px}#print-area .paper{box-shadow:none;margin:0} @media(max-width:400px){.paper{padding:18px;font-size:14px}.paper .sender,.paper .letter-date{font-size:13px}} @media print{#print-area .paper{border:0;padding:0;font-size:11pt;line-height:1.65;white-space:normal}#print-area .paper+article{break-before:page}#print-area .paper .cv-header h2{font-size:27pt}#print-area .paper h3{font-size:10pt}#print-area .paper .cv-contact{font-size:10pt}#print-area .paper .sender,#print-area .paper .letter-date{font-size:10.5pt}#print-area .paper .cv-photo{width:25mm;height:30mm;float:right;margin:0 0 12px 18px}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main" data-en="Skip to content">Ruka hadi maudhui</a>
-<header><nav aria-label="Main"><strong>ZANZIBABA</strong><button type="button" class="secondary" id="lang-toggle" lang="en">English</button><a href="/" data-en="Main website">Tovuti kuu</a></nav></header>
+<header><nav aria-label="Main"><strong>ZANZIBABA</strong><div class="language-switch" role="group" aria-label="Lugha ya ukurasa / Page language"><button type="button" id="ui-sw" lang="sw" aria-pressed="true">Kiswahili</button><button type="button" id="lang-toggle" lang="en" aria-pressed="false">English</button></div><a href="/" data-en="Main website">Tovuti kuu</a></nav></header>
 <main id="main">
 <section class="hero" aria-labelledby="title">
 <div class="eyebrow">ZANZIBABA CAREER ASSISTANT · LARIS</div>
@@ -65,8 +67,10 @@
 </section>
 <section class="card documents" id="documents" aria-labelledby="documents-title" hidden>
 <h2 id="documents-title" tabindex="-1" data-en="2. Review your CV and letter">2. Kagua CV na barua yako</h2>
-<p class="muted" data-en="Edit the text below. Include only true information. Changing the interface language will not change your drafts; generate again only if you want to replace them.">Rekebisha maandishi hapa chini. Weka taarifa za kweli pekee. Kubadili lugha ya ukurasa hakubadili rasimu zako; tengeneza tena ikiwa unataka kuzibadilisha.</p>
-<label for="cv-text" data-en="Your CV (editable)">CV yako (unaweza kuhariri)</label><textarea id="cv-text" rows="10" maxlength="20000"></textarea>
+<p class="muted" data-en="Review the formatted documents below. Open Edit text to make changes. Your edits are kept separately for each document language.">Kagua nyaraka zilizopangiliwa hapa chini. Fungua Hariri maandishi kufanya marekebisho. Edits zako zinahifadhiwa kando kwa kila lugha ya nyaraka.</p>
+<div class="document-toolbar"><p id="document-language-label" data-en="CV and letter language">Lugha ya CV na barua</p><div class="language-switch" role="group" aria-labelledby="document-language-label"><button type="button" id="doc-sw" lang="sw" aria-pressed="true">Kiswahili</button><button type="button" id="doc-en" lang="en" aria-pressed="false">English</button></div><p class="muted" data-en="Headings and standard letter text change language. Translate any details you typed yourself before sending.">Vichwa na maandishi ya kawaida ya barua hubadilika lugha. Tafsiri maelezo uliyoandika mwenyewe kabla ya kutuma.</p></div>
+<h3 class="document-caption" data-en="CV preview">Muonekano wa CV</h3><article id="cv-preview" class="paper" aria-label="CV"></article>
+<details class="edit-document"><summary data-en="Edit CV text">Hariri maandishi ya CV</summary><div><label for="cv-text" data-en="Your CV (editable)">CV yako (unaweza kuhariri)</label><textarea id="cv-text" rows="10" maxlength="20000"></textarea></div></details>
 <details><summary data-en="Add a photo (optional)">Ongeza picha (hiari)</summary><div>
 <p class="muted" data-en="A photo is optional. Check whether the official notice asks for one. Choose JPG, PNG or WebP, up to 8 MB; on supported phones you can also take a photo.">Picha ni hiari. Hakiki kama tangazo rasmi linaihitaji. Chagua JPG, PNG au WebP hadi MB 8; kwa simu zinazounga mkono unaweza pia kupiga picha.</p>
 <label for="photo-upload" data-en="Choose a photo">Chagua picha</label><input id="photo-upload" type="file" accept="image/jpeg,image/png,image/webp">
@@ -74,7 +78,7 @@
 <img id="photo-preview" alt="Picha ya mwombaji" hidden>
 <button type="button" class="secondary" id="photo-remove" data-en="Remove photo">Ondoa picha</button><p id="photo-status" class="status" role="status"></p>
 </div></details>
-<label for="letter-text" data-en="Short cover letter (editable)">Barua fupi ya maombi (unaweza kuhariri)</label><textarea id="letter-text" rows="12" maxlength="20000"></textarea>
+<h3 class="document-caption" data-en="Cover letter preview">Muonekano wa barua</h3><article id="letter-preview" class="paper" aria-label="Barua / Cover letter"></article><details class="edit-document"><summary data-en="Edit letter text">Hariri maandishi ya barua</summary><div><label for="letter-text" data-en="Short cover letter (editable)">Barua fupi ya maombi (unaweza kuhariri)</label><textarea id="letter-text" rows="12" maxlength="20000"></textarea></div></details>
 <div class="actions"><button type="button" class="secondary" id="cv-print" data-en="Print / save CV PDF">Chapisha / hifadhi CV PDF</button><button type="button" class="secondary" id="letter-print" data-en="Print / save letter PDF">Chapisha / hifadhi barua PDF</button><button type="button" class="secondary" id="print" data-en="Print / save both PDFs">Chapisha / hifadhi zote PDF</button></div>
 <p class="muted" data-en="In the Print window, choose “Save as PDF” or your printer. Save the CV and letter separately if you want two attachments.">Kwenye dirisha la kuchapisha, chagua “Save as PDF” au printa yako. Hifadhi CV na barua kila moja ikiwa unataka viambatisho viwili.</p>
 <p id="document-status" class="status" role="status"></p>
@@ -99,6 +103,8 @@
 const $ = id => document.getElementById(id);
 const fields = {name:'name',phone:'phone',email:'email',location:'location',education:'education',skills:'skills',experience:'experience',spokenLanguages:'spoken-languages',motivation:'motivation'};
 let language = 'sw';
+let documentLanguage = 'sw';
+let documentDrafts = {};
 let applicantPhoto = null;
 let photoTask = 0;
 const say = (id, sw, en) => { $(id).textContent = language === 'sw' ? sw : en; };
@@ -109,16 +115,17 @@ function setLanguage(next) {
   document.documentElement.lang = language;
   for (const [el, sw, en] of translations) el.textContent = language === 'sw' ? sw : en;
   for (const [el, sw, en] of placeholders) el.placeholder = language === 'sw' ? sw : en;
-  $('lang-toggle').textContent = language === 'sw' ? 'English' : 'Kiswahili';
-  $('lang-toggle').lang = language === 'sw' ? 'en' : 'sw';
+  $('ui-sw').setAttribute('aria-pressed', String(language === 'sw'));
+  $('lang-toggle').setAttribute('aria-pressed', String(language === 'en'));
   $('photo-preview').alt = language === 'sw' ? 'Picha ya mwombaji' : 'Applicant photo';
   for (const id of ['form-status','profile-status','photo-status','document-status','apply-status']) $(id).textContent = '';
 }
-$('lang-toggle').onclick = () => setLanguage(language === 'sw' ? 'en' : 'sw');
+$('lang-toggle').onclick = () => setLanguage('en');
+$('ui-sw').onclick = () => setLanguage('sw');
 function values() { return Object.fromEntries(Object.entries(fields).map(([key,id]) => [key,$(id).value.trim()])); }
 function emailLink() {
   const name = $('name').value.trim();
-  const body = language === 'sw' ? `Habari Timu ya Uajiri,\n\nNinaomba nafasi ya kazi katika mradi wa LARIS. Nitaambatisha CV na barua yangu ya maombi.\n\nNilisikia kuhusu nafasi hii kupitia Zanzibaba Company Limited.\n\nAsanteni,\n${name}` : `Dear Hiring Team,\n\nI would like to apply for work with the LARIS project. I will attach my CV and cover letter.\n\nI heard about this opportunity through Zanzibaba Company Limited.\n\nKind regards,\n${name}`;
+  const body = documentLanguage === 'sw' ? `Habari Timu ya Uajiri,\n\nNinaomba nafasi ya kazi katika mradi wa LARIS. Nitaambatisha CV na barua yangu ya maombi.\n\nNilisikia kuhusu nafasi hii kupitia Zanzibaba Company Limited.\n\nAsanteni,\n${name}` : `Dear Hiring Team,\n\nI would like to apply for work with the LARIS project. I will attach my CV and cover letter.\n\nI heard about this opportunity through Zanzibaba Company Limited.\n\nKind regards,\n${name}`;
   $('mailto').href = 'mailto:laris.zanzibar@proton.me?subject=' + encodeURIComponent('LARIS Job Application' + (name ? ' - ' + name : '')) + '&body=' + encodeURIComponent(body);
 }
 function revealDocuments(focus = false) {
@@ -127,23 +134,65 @@ function revealDocuments(focus = false) {
 }
 function resetReview() { $('reviewed').checked = false; }
 $('applicant-form').addEventListener('input', resetReview);
-for (const id of ['cv-text','letter-text']) $(id).addEventListener('input', resetReview);
+function saveCurrentDraft() {
+  documentDrafts[documentLanguage] = {cvText:$('cv-text').value,letterText:$('letter-text').value};
+}
+function makeDraft(lang) {
+  const d = values(), sw = lang === 'sw';
+  const labels = sw ? {education:'Elimu',skills:'Ujuzi na shughuli',experience:'Uzoefu',spokenLanguages:'Lugha'} : {education:'Education',skills:'Skills and activities',experience:'Experience',spokenLanguages:'Languages'};
+  const contact = [d.location,d.phone,d.email].filter(Boolean).join('\n');
+  const cv = [d.name,sw ? 'WASIFU BINAFSI' : 'CURRICULUM VITAE',contact,...Object.entries(labels).filter(([key]) => d[key]).map(([key,label]) => label.toUpperCase()+'\n'+d[key])].filter(Boolean).join('\n\n');
+  const date = new Intl.DateTimeFormat(sw ? 'sw-TZ' : 'en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'Africa/Dar_es_Salaam'}).format(new Date());
+  const letter = [[d.name,contact].filter(Boolean).join('\n'),date,sw ? 'Timu ya Uajiri\nIGN FI — Mradi wa LARIS\nZanzibar\nlaris.zanzibar@proton.me' : 'The Hiring Team\nIGN FI — LARIS Project\nZanzibar\nlaris.zanzibar@proton.me',sw ? 'Ndugu Timu ya Uajiri,' : 'Dear Hiring Team,',sw ? 'YAH: MAOMBI YA KAZI — MRADI WA LARIS' : 'RE: JOB APPLICATION — LARIS PROJECT',sw ? 'Ninaomba nafasi ya kazi katika mradi wa LARIS Zanzibar. Tafadhali zingatia maombi yangu na CV iliyoambatishwa.' : 'I would like to apply for work with the LARIS project in Zanzibar. Please consider my application and attached CV.',d.motivation ? (sw ? 'Sababu yangu ya kuomba: ' : 'My reason for applying: ')+d.motivation : '',sw ? 'Nilisikia kuhusu nafasi hii kupitia Zanzibaba Company Limited.' : 'I heard about this opportunity through Zanzibaba Company Limited.',sw ? 'Asanteni kwa kuzingatia maombi yangu.' : 'Thank you for considering my application.',(sw ? 'Wako mwaminifu,' : 'Yours faithfully,')+'\n'+d.name].filter(Boolean).join('\n\n');
+  return {cvText:cv,letterText:letter};
+}
+function textElement(tag,text,className) {
+  const el = document.createElement(tag); el.textContent = text; if (className) el.className = className; return el;
+}
+function renderDocuments() {
+  const cv = $('cv-preview'), letter = $('letter-preview'); cv.replaceChildren(); letter.replaceChildren();
+  cv.lang = letter.lang = documentLanguage;
+  const parts = $('cv-text').value.trim().split(/\n\s*\n/).filter(Boolean);
+  const header = document.createElement('div'); header.className = 'cv-header';
+  if (applicantPhoto) { const img = document.createElement('img'); img.src = applicantPhoto; img.alt = documentLanguage === 'sw' ? 'Picha ya mwombaji' : 'Applicant photo'; img.className = 'cv-photo'; header.append(img); }
+  if (parts.length) header.append(textElement('h2',parts.shift()));
+  if (parts.length && /^(CURRICULUM VITAE|WASIFU BINAFSI)$/i.test(parts[0])) header.append(textElement('p',parts.shift(),'cv-subtitle'));
+  cv.append(header);
+  const sectionPattern = /^(ELIMU|UJUZI NA SHUGHULI|UZOEFU|LUGHA|EDUCATION|SKILLS AND ACTIVITIES|EXPERIENCE|LANGUAGES)\n([\s\S]*)$/;
+  parts.forEach((part,index) => { const match = part.match(sectionPattern); if (match) { const section = document.createElement('section'); section.append(textElement('h3',match[1]),textElement('p',match[2])); cv.append(section); } else if (index === 0 && !cv.querySelector('section')) header.append(textElement('p',part,'cv-contact')); else cv.append(textElement('p',part)); });
+  const blocks = $('letter-text').value.trim().split(/\n\s*\n/).filter(Boolean);
+  const structured = blocks.length > 2 && /laris\.zanzibar@proton\.me/.test(blocks[2]);
+  blocks.forEach((block,index) => {
+    let style = structured && index === 0 ? 'sender' : structured && index === 1 ? 'letter-date' : /^(YAH:|RE:)/.test(block) ? 'letter-subject' : '';
+    if (/^(Wako mwaminifu,|Yours faithfully,)\n/.test(block)) { const lines = block.split('\n'); const p = textElement('p',lines.shift(),'signature'); p.append(textElement('strong',lines.join('\n'))); letter.append(p); }
+    else letter.append(textElement('p',block,style));
+  });
+}
+function selectDocumentLanguage(next,preserve = true) {
+  if (preserve) saveCurrentDraft(); documentLanguage = next;
+  if (!documentDrafts[next]) documentDrafts[next] = makeDraft(next);
+  $('cv-text').value = documentDrafts[next].cvText; $('letter-text').value = documentDrafts[next].letterText;
+  $('doc-sw').setAttribute('aria-pressed',String(next === 'sw')); $('doc-en').setAttribute('aria-pressed',String(next === 'en'));
+  renderDocuments(); resetReview(); emailLink();
+}
+$('doc-sw').onclick = () => selectDocumentLanguage('sw');
+$('doc-en').onclick = () => selectDocumentLanguage('en');
+for (const id of ['cv-text','letter-text']) $(id).addEventListener('input', () => { saveCurrentDraft(); renderDocuments(); resetReview(); });
 $('applicant-form').addEventListener('submit', event => {
   event.preventDefault();
-  const d = values();
-  if (!d.name) { say('form-status','Jaza jina lako kwanza.','Enter your name first.'); $('name').focus(); return; }
-  if (($('cv-text').value || $('letter-text').value) && !confirm(language === 'sw' ? 'Kutengeneza tena kutabadilisha rasimu ulizohariri. Endelea?' : 'Generating again will replace your edited drafts. Continue?')) return;
-  const sw = language === 'sw';
-  const labels = sw ? {phone:'Simu',email:'Email',location:'Makazi',education:'Elimu',skills:'Ujuzi / shughuli',experience:'Uzoefu',spokenLanguages:'Lugha'} : {phone:'Phone',email:'Email',location:'Location',education:'Education',skills:'Skills / activities',experience:'Experience',spokenLanguages:'Languages'};
-  $('cv-text').value = [d.name,'CURRICULUM VITAE',...Object.entries(labels).filter(([key]) => d[key]).map(([key,label]) => `${label}: ${d[key]}`)].join('\n\n');
-  $('letter-text').value = sw ? ['Kwa Timu ya Uajiri ya LARIS,','YAH: Maombi ya kazi — Mradi wa LARIS','Ninaomba nafasi ya kazi katika mradi wa LARIS Zanzibar. Tafadhali zingatia maombi yangu na CV iliyoambatishwa.',d.motivation ? 'Sababu yangu ya kuomba: ' + d.motivation : '', 'Nilisikia kuhusu nafasi hii kupitia Zanzibaba Company Limited.','Asanteni kwa kuzingatia maombi yangu.','Wako mwaminifu,',d.name,d.phone,d.email].filter(Boolean).join('\n\n') : ['Dear LARIS Hiring Team,','RE: Job application — LARIS project','I would like to apply for work with the LARIS project in Zanzibar. Please consider my application and attached CV.',d.motivation ? 'My reason for applying: ' + d.motivation : '', 'I heard about this opportunity through Zanzibaba Company Limited.','Thank you for considering my application.','Yours faithfully,',d.name,d.phone,d.email].filter(Boolean).join('\n\n');
-  resetReview(); emailLink(); revealDocuments(true);
+  if (!values().name) { say('form-status','Jaza jina lako kwanza.','Enter your name first.'); $('name').focus(); return; }
+  if (($('cv-text').value || $('letter-text').value) && !confirm(language === 'sw' ? 'Kutengeneza tena kutabadilisha rasimu za lugha zote ulizohariri. Endelea?' : 'Generating again will replace your edited drafts in both languages. Continue?')) return;
+  documentDrafts = {sw:makeDraft('sw'),en:makeDraft('en')};
+  documentLanguage = language;
+  // The old editor values must not overwrite the newly generated draft.
+  $('cv-text').value = ''; $('letter-text').value = '';
+  selectDocumentLanguage(documentLanguage,false); revealDocuments(true);
 });
 function showPhoto() {
   $('photo-preview').hidden = !applicantPhoto;
   if (applicantPhoto) $('photo-preview').src = applicantPhoto;
   else $('photo-preview').removeAttribute('src');
-  resetReview();
+  renderDocuments(); resetReview();
 }
 async function readPhoto(file) {
   const task = ++photoTask;
@@ -166,11 +215,11 @@ $('photo-remove').onclick = () => { ++photoTask; applicantPhoto = null; $('photo
 function printDocuments(kind) {
   const ids = kind === 'both' ? ['cv-text','letter-text'] : [kind === 'cv' ? 'cv-text' : 'letter-text'];
   if (ids.some(id => !$(id).value.trim())) { say('document-status','Tengeneza na kagua nyaraka kwanza.','Create and review your documents first.'); return; }
+  renderDocuments();
   const area = $('print-area'); area.replaceChildren();
   for (const id of ids) {
-    const article = document.createElement('article');
-    if (id === 'cv-text' && applicantPhoto) { const img = document.createElement('img'); img.src = applicantPhoto; img.alt = $('photo-preview').alt; article.append(img); }
-    article.append(document.createTextNode($(id).value)); area.append(article);
+    const source = $(id === 'cv-text' ? 'cv-preview' : 'letter-preview');
+    const copy = source.cloneNode(true); copy.removeAttribute('id'); area.append(copy);
   }
   window.print();
 }
@@ -182,28 +231,41 @@ $('mailto').addEventListener('click', () => {
   if (!$('reviewed').checked) say('apply-status','Kagua CV na barua, hifadhi PDF na uziambatishe kabla ya kutuma.','Review the CV and letter, save the PDFs and attach them before sending.');
 });
 $('export').onclick = () => {
-  const data = {...values(),version:3,language,photo:applicantPhoto,cvText:$('cv-text').value,letterText:$('letter-text').value};
+  saveCurrentDraft();
+  const data = {...values(),version:4,language,documentLanguage,documentDrafts,photo:applicantPhoto,cvText:$('cv-text').value,letterText:$('letter-text').value};
   const url = URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));
   const a = document.createElement('a'); a.href = url; a.download = 'zanzibaba-applicant-profile.json'; a.click(); setTimeout(() => URL.revokeObjectURL(url),1000);
   say('profile-status','Profile imeandaliwa kupakuliwa. Hifadhi faili salama.','Profile ready to download. Keep the file safe.');
 };
-// Validate the whole file before changing any fields. Older v1/v2 profiles remain readable.
+// Validate the whole file before changing any fields. Older v1/v2/v3 profiles remain readable.
 $('import').onchange = async event => {
   const file = event.target.files[0]; if (!file) return;
   try {
     if (file.size > 1200000) throw Error('size');
     const d = JSON.parse(await file.text());
-    if (!d || ![1,2,3].includes(d.version)) throw Error('version');
+    if (!d || ![1,2,3,4].includes(d.version)) throw Error('version');
     const limits = {name:200,phone:80,email:254,location:300,education:2000,skills:4000,experience:4000,spokenLanguages:500,motivation:4000,cvText:20000,letterText:20000,draft:40000};
     for (const [key,limit] of Object.entries(limits)) if (d[key] !== undefined && (typeof d[key] !== 'string' || d[key].length > limit)) throw Error(key);
     for (const key of ['name','education','skills']) if (typeof d[key] !== 'string') throw Error(key);
+    if (d.version === 4) {
+      if (!['sw','en'].includes(d.documentLanguage) || !d.documentDrafts || typeof d.documentDrafts !== 'object' || Array.isArray(d.documentDrafts)) throw Error('languages');
+      for (const [lang,draft] of Object.entries(d.documentDrafts)) {
+        if (!['sw','en'].includes(lang) || !draft || typeof draft !== 'object') throw Error('draft');
+        for (const key of ['cvText','letterText']) if (typeof draft[key] !== 'string' || draft[key].length > 20000) throw Error('draft text');
+      }
+    }
     if (d.photo != null && (typeof d.photo !== 'string' || d.photo.length > 800000 || !/^data:image\/jpeg;base64,[A-Za-z0-9+/]+={0,2}$/.test(d.photo))) throw Error('photo');
     if (d.photo) { const img = new Image(); img.src = d.photo; await img.decode(); }
     let cv = d.cvText || '', letter = d.letterText || '';
     if (!cv && !letter && d.draft) { const marker = d.draft.indexOf('APPLICATION LETTER'); if (marker >= 0) { cv = d.draft.slice(0,marker).trim(); letter = d.draft.slice(marker).trim(); } else cv = d.draft; }
     for (const [key,id] of Object.entries(fields)) $(id).value = d[key] || '';
     ++photoTask; applicantPhoto = d.photo || null; $('photo-upload').value = ''; $('photo-camera').value = ''; showPhoto();
+    documentLanguage = d.version === 4 ? d.documentLanguage : (d.language === 'en' ? 'en' : 'sw');
+    documentDrafts = d.version === 4 ? structuredClone(d.documentDrafts) : {};
     $('cv-text').value = cv; $('letter-text').value = letter;
+    saveCurrentDraft();
+    $('doc-sw').setAttribute('aria-pressed',String(documentLanguage === 'sw')); $('doc-en').setAttribute('aria-pressed',String(documentLanguage === 'en'));
+    renderDocuments();
     if (d.language === 'sw' || d.language === 'en') setLanguage(d.language);
     $('documents').hidden = !(cv || letter); emailLink(); resetReview();
     say('profile-status','Profile imerudishwa. Kagua nyaraka za zamani kabla ya kutuma.','Profile loaded. Review any older documents before sending.');
