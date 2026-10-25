@@ -34,6 +34,11 @@ select{display:block;width:100%;font:inherit;color:inherit;background:#fff;borde
 <p class="muted" data-en="Only your name is required to create a draft. No account needed. Your details and photo stay in this page on your device; download a profile to keep them before closing.">Jina pekee linahitajika kutengeneza rasimu. Huhitaji akaunti. Taarifa na picha vinabaki kwenye ukurasa huu katika kifaa chako; pakua profile kuvihifadhi kabla ya kufunga.</p>
 <form id="applicant-form">
 <label for="name" data-en="Full name">Jina kamili</label><input id="name" name="name" autocomplete="name" required maxlength="200">
+<label for="gender" data-en="Gender (optional)">Jinsia (hiari)</label><select id="gender" name="gender"><option value="" data-en="Choose (optional)">Chagua (hiari)</option><option value="female" data-en="Female">Mwanamke</option><option value="male" data-en="Male">Mwanaume</option><option value="other" data-en="Other">Nyingine</option><option value="undisclosed" data-en="Prefer not to say">Sipendi kutaja</option></select>
+<label for="birth-mode" data-en="Date of birth or age (optional)">Tarehe ya kuzaliwa au umri (hiari)</label><select id="birth-mode" name="birth-mode"><option value="" data-en="Do not include">Usiweke</option><option value="dob" data-en="Use date of birth">Weka tarehe ya kuzaliwa</option><option value="age" data-en="Use age only">Weka umri pekee</option></select>
+<div id="dob-field" hidden><label for="dob" data-en="Date of birth">Tarehe ya kuzaliwa</label><input id="dob" name="dob" type="date" autocomplete="bday" min="1900-01-01" disabled></div>
+<div id="age-field" hidden><label for="age" data-en="Age in years">Umri kwa miaka</label><input id="age" name="age" type="number" inputmode="numeric" min="0" max="120" step="1" disabled></div>
+<p class="muted" data-en="These details are optional. Only the details you choose will appear on your CV. Choosing Prefer not to say leaves gender off the CV.">Taarifa hizi ni hiari. Ulizochagua pekee zitaonekana kwenye CV. Ukichagua Sipendi kutaja, jinsia haitawekwa kwenye CV.</p>
 <div class="fields"><div><label for="phone" data-en="Phone (optional)">Simu (hiari)</label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="80"></div><div><label for="email" data-en="Email (optional)">Email (hiari)</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254"></div></div>
 <details id="email-help"><summary data-en="No email? Learn what it is and create one">Huna email? Jua ni nini na uitengeneze</summary><div>
 <p data-en="Email is electronic mail: you use it to send and receive messages through the internet. Your email address is your contact address, for example jina@example.com.">Email ni barua pepe: unaitumia kutuma na kupokea ujumbe kupitia intaneti. Anuani yako ya email ni kama anuani ya kupokea barua, kwa mfano jina@example.com.</p>
@@ -103,7 +108,30 @@ select{display:block;width:100%;font:inherit;color:inherit;background:#fff;borde
 <script>
 'use strict';
 const $ = id => document.getElementById(id);
-const fields = {name:'name',phone:'phone',email:'email',location:'location',education:'education',skills:'skills',experience:'experience',spokenLanguages:'spoken-languages',motivation:'motivation'};
+const fields = {name:'name',gender:'gender',birthMode:'birth-mode',dob:'dob',age:'age',phone:'phone',email:'email',location:'location',education:'education',skills:'skills',experience:'experience',spokenLanguages:'spoken-languages',motivation:'motivation'};
+const genderLabels = {female:{sw:'Mwanamke',en:'Female'},male:{sw:'Mwanaume',en:'Male'},other:{sw:'Nyingine',en:'Other'}};
+function todayDate() {
+  const parts = new Intl.DateTimeFormat('en',{year:'numeric',month:'2-digit',day:'2-digit',timeZone:'Africa/Dar_es_Salaam'}).formatToParts(new Date());
+  const part = type => parts.find(p => p.type === type).value;
+  return part('year')+'-'+part('month')+'-'+part('day');
+}
+$('dob').max = todayDate();
+function updateBirthFields() {
+  const mode = $('birth-mode').value;
+  $('dob-field').hidden = mode !== 'dob'; $('dob').disabled = mode !== 'dob';
+  $('age-field').hidden = mode !== 'age'; $('age').disabled = mode !== 'age';
+}
+$('birth-mode').onchange = updateBirthFields;
+function validPersonalData(d) {
+  if (d.gender !== undefined && !['','female','male','other','undisclosed'].includes(d.gender)) return false;
+  if (d.birthMode !== undefined && !['','dob','age'].includes(d.birthMode)) return false;
+  if (d.birthMode === 'age' && d.age) return /^\d{1,3}$/.test(d.age) && Number(d.age) <= 120;
+  if (d.birthMode === 'dob' && d.dob) {
+    const date = new Date(d.dob+'T00:00:00Z');
+    return /^\d{4}-\d{2}-\d{2}$/.test(d.dob) && !Number.isNaN(date.getTime()) && date.toISOString().slice(0,10) === d.dob && d.dob >= '1900-01-01' && d.dob <= todayDate();
+  }
+  return true;
+}
 let language = 'sw';
 let documentLanguage = 'sw';
 let documentDrafts = {};
@@ -128,6 +156,11 @@ function documentValues(lang) {
     const preset = chosen[id].map(value => choiceCatalog[id][value][lang]).join(', ');
     d[key] = [preset,d[key]].filter(Boolean).join(preset && key === 'education' ? ' — ' : '; ');
   }
+  const personal = [];
+  if (genderLabels[d.gender]) personal.push((lang === 'sw' ? 'Jinsia: ' : 'Gender: ')+genderLabels[d.gender][lang]);
+  if (d.birthMode === 'dob' && d.dob && validPersonalData(d)) personal.push((lang === 'sw' ? 'Tarehe ya kuzaliwa: ' : 'Date of birth: ')+new Intl.DateTimeFormat(lang === 'sw' ? 'sw-TZ' : 'en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(d.dob+'T00:00:00Z')));
+  if (d.birthMode === 'age' && d.age && validPersonalData(d)) personal.push((lang === 'sw' ? 'Umri: miaka '+d.age : 'Age: '+d.age+' years'));
+  d.personal = personal.join('\n');
   return d;
 }
 function updateTemplateControls() {
@@ -181,7 +214,7 @@ function saveCurrentDraft() {
 }
 function makeDraft(lang) {
   const d = documentValues(lang), sw = lang === 'sw';
-  const labels = sw ? {education:'Elimu',skills:'Ujuzi na shughuli',experience:'Uzoefu',spokenLanguages:'Lugha'} : {education:'Education',skills:'Skills and activities',experience:'Experience',spokenLanguages:'Languages'};
+  const labels = sw ? {personal:'Taarifa binafsi',education:'Elimu',skills:'Ujuzi na shughuli',experience:'Uzoefu',spokenLanguages:'Lugha'} : {personal:'Personal details',education:'Education',skills:'Skills and activities',experience:'Experience',spokenLanguages:'Languages'};
   const contact = [d.location,d.phone,d.email].filter(Boolean).join('\n');
   const cv = [d.name,sw ? 'WASIFU BINAFSI' : 'CURRICULUM VITAE',contact,...Object.entries(labels).filter(([key]) => d[key]).map(([key,label]) => label.toUpperCase()+'\n'+d[key])].filter(Boolean).join('\n\n');
   const date = new Intl.DateTimeFormat(sw ? 'sw-TZ' : 'en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'Africa/Dar_es_Salaam'}).format(new Date());
@@ -202,7 +235,7 @@ function renderDocuments() {
   if (parts.length) header.append(textElement('h2',parts.shift()));
   if (parts.length && /^(CURRICULUM VITAE|WASIFU BINAFSI)$/i.test(parts[0])) header.append(textElement('p',parts.shift(),'cv-subtitle'));
   cv.append(header);
-  const sectionPattern = /^(ELIMU|UJUZI NA SHUGHULI|UZOEFU|LUGHA|EDUCATION|SKILLS AND ACTIVITIES|EXPERIENCE|LANGUAGES)\n([\s\S]*)$/;
+  const sectionPattern = /^(TAARIFA BINAFSI|PERSONAL DETAILS|ELIMU|UJUZI NA SHUGHULI|UZOEFU|LUGHA|EDUCATION|SKILLS AND ACTIVITIES|EXPERIENCE|LANGUAGES)\n([\s\S]*)$/;
   parts.forEach((part,index) => { const match = part.match(sectionPattern); if (match) { const section = document.createElement('section'); section.append(textElement('h3',match[1]),textElement('p',match[2])); cv.append(section); } else if (index === 0 && !cv.querySelector('section')) header.append(textElement('p',part,'cv-contact')); else cv.append(textElement('p',part)); });
   const blocks = $('letter-text').value.trim().split(/\n\s*\n/).filter(Boolean);
   const structured = blocks.length > 2 && /laris\.zanzibar@proton\.me/.test(blocks[2]);
@@ -224,6 +257,7 @@ $('doc-en').onclick = () => selectDocumentLanguage('en');
 for (const id of ['cv-text','letter-text']) $(id).addEventListener('input', () => { saveCurrentDraft(); renderDocuments(); resetReview(); });
 $('applicant-form').addEventListener('submit', event => {
   event.preventDefault();
+  if (!validPersonalData(values())) { say('form-status','Hakiki tarehe ya kuzaliwa au umri uliojaza.','Check the date of birth or age you entered.'); return; }
   if (!values().name) { say('form-status','Jaza jina lako kwanza.','Enter your name first.'); $('name').focus(); return; }
   if (($('cv-text').value || $('letter-text').value) && !confirm(language === 'sw' ? 'Kutengeneza tena kutabadilisha rasimu za lugha zote ulizohariri. Endelea?' : 'Generating again will replace your edited drafts in both languages. Continue?')) return;
   documentDrafts = {sw:makeDraft('sw'),en:makeDraft('en')};
@@ -288,8 +322,9 @@ $('import').onchange = async event => {
     if (file.size > 1200000) throw Error('size');
     const d = JSON.parse(await file.text());
     if (!d || ![1,2,3,4,5].includes(d.version)) throw Error('version');
-    const limits = {name:200,phone:80,email:254,location:300,education:2000,skills:4000,experience:4000,spokenLanguages:500,motivation:4000,cvText:20000,letterText:20000,draft:40000};
+    const limits = {name:200,gender:20,birthMode:5,dob:10,age:3,phone:80,email:254,location:300,education:2000,skills:4000,experience:4000,spokenLanguages:500,motivation:4000,cvText:20000,letterText:20000,draft:40000};
     for (const [key,limit] of Object.entries(limits)) if (d[key] !== undefined && (typeof d[key] !== 'string' || d[key].length > limit)) throw Error(key);
+    if (!validPersonalData(d)) throw Error('personal data');
     for (const key of ['name','education','skills']) if (typeof d[key] !== 'string') throw Error(key);
     if (d.version >= 4) {
       if (!['sw','en'].includes(d.documentLanguage) || !d.documentDrafts || typeof d.documentDrafts !== 'object' || Array.isArray(d.documentDrafts)) throw Error('languages');
@@ -311,6 +346,7 @@ $('import').onchange = async event => {
     let cv = d.cvText || '', letter = d.letterText || '';
     if (!cv && !letter && d.draft) { const marker = d.draft.indexOf('APPLICATION LETTER'); if (marker >= 0) { cv = d.draft.slice(0,marker).trim(); letter = d.draft.slice(marker).trim(); } else cv = d.draft; }
     for (const [key,id] of Object.entries(fields)) $(id).value = d[key] || '';
+    updateBirthFields();
     clearChoices();
     if (d.version === 5) {
       cvLayout = d.cvLayout; letterLayout = d.letterLayout; wordingVariant = d.wordingVariant;
