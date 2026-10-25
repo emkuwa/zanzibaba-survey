@@ -1,0 +1,16 @@
+{
+  "id": "/careers/laris/",
+  "name": "Zanzibaba Career Assistant — LARIS",
+  "short_name": "Zanzibaba CV",
+  "description": "Andaa profile, CV na barua ya maombi ya LARIS kwa Kiswahili au English.",
+  "lang": "sw",
+  "start_url": "/careers/laris/",
+  "scope": "/careers/laris/",
+  "display": "standalone",
+  "background_color": "#f4f6f8",
+  "theme_color": "#142d42",
+  "icons": [
+    {"src": "/careers/laris/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "/careers/laris/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}
