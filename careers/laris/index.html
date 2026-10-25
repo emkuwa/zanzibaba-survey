@@ -44,13 +44,13 @@ html{scroll-padding-top:100px}button,input,select,textarea{-webkit-tap-highlight
 <p id="app-status" class="status" role="status"></p><p id="connection-status" class="connection-status" role="status"></p>
 <section class="card" id="share-help" hidden aria-labelledby="share-title"><h2 id="share-title" data-en="Share this assistant">Shiriki mfumo huu</h2><p data-en="Only the website link is shared. Your profile, photo and documents are not shared.">Link ya mfumo pekee ndiyo inashirikiwa. Profile, picha na nyaraka zako hazishirikiwi.</p><div class="actions"><button type="button" id="copy-app-link" data-en="Copy link">Nakili link</button><a class="button" id="whatsapp-share" target="_blank" rel="noopener noreferrer" href="https://wa.me/?text=https%3A%2F%2Fsurvey.zanzibaba.com%2Fcareers%2Flaris%2F" data-en="Share on WhatsApp">Shiriki WhatsApp</a></div><p class="share-link"><a href="https://survey.zanzibaba.com/careers/laris/">https://survey.zanzibaba.com/careers/laris/</a></p><p id="share-status" class="status" role="status"></p><button type="button" class="secondary" data-close-panel="share-help" data-en="Close">Funga</button></section>
 <section class="card" id="install-help" tabindex="-1" hidden aria-labelledby="install-title"><h2 id="install-title" data-en="Add to your phone">Weka kwenye simu yako</h2><p id="install-status" class="status" role="status"></p><div class="install-guide"><strong>Android</strong><p data-en="Open this link in Chrome. Tap the menu ⋮, then Install app or Add to Home screen. If an Install button appears, tap it and follow the instructions.">Fungua link hii kwenye Chrome. Bonyeza menyu ⋮, kisha Install app au Add to Home screen. Kitufe cha Install kikionekana, kibonyeze na ufuate maelekezo.</p></div><div class="install-guide"><strong>iPhone / iPad</strong><p data-en="Open this link in Safari. Tap Share, then Add to Home Screen, then Add. If opened inside WhatsApp or another app, first choose Open in browser.">Fungua link hii kwenye Safari. Bonyeza Share, kisha Add to Home Screen, halafu Add. Ikiwa umefungua ndani ya WhatsApp au app nyingine, kwanza chagua Open in browser.</p></div><p class="muted" data-en="After the first online visit, the assistant can work offline. Sending email and opening external links need internet. If the installed app opens with an empty profile, use your downloaded profile file to load it.">Baada ya kufungua mara ya kwanza ukiwa na intaneti, mfumo unaweza kufanya kazi bila intaneti. Kutuma email na kufungua link za nje kunahitaji intaneti. App iliyowekwa ikifunguka bila profile, rudisha faili la profile ulilopakua.</p><button type="button" class="secondary" data-close-panel="install-help" data-en="Close">Funga</button></section>
-<section class="card profile-card" id="my-profile" hidden aria-labelledby="profile-actions-title"><div class="profile-heading"><div><h2 id="profile-actions-title" tabindex="-1" data-en="Your profile on this device">Profile yako kwenye kifaa hiki</h2><p id="profile-name" class="active-step-label"></p></div><div id="profile-avatar" class="profile-avatar" aria-hidden="true">Z</div></div><p class="profile-help" data-en="Enter your name below, then save your profile here. After saving, changes are saved automatically on this device. No account or password needed. Anyone using this browser can open the saved profile.">Jaza jina hapa chini, kisha hifadhi profile hapa. Baada ya kuhifadhi, mabadiliko huhifadhiwa yenyewe kwenye kifaa hiki. Huhitaji akaunti wala nenosiri. Anayetumia browser hii anaweza kufungua profile iliyohifadhiwa.</p><div class="profile-actions"><button type="button" id="save-local-profile" data-en="Create / save profile">Tengeneza / hifadhi profile</button><button type="button" id="continue-profile" class="secondary" data-en="Edit my details">Hariri taarifa zangu</button><button type="button" id="delete-local-profile" class="secondary" data-en="Remove saved profile" hidden>Ondoa profile iliyohifadhiwa</button></div><p id="local-profile-status" class="status" role="status"></p><p class="profile-help" data-en="Download a profile backup under step 1 to move it to another phone. Browser data can be cleared, so keep a backup.">Pakua nakala ya profile kwenye hatua ya 1 ili kuihamisha kwenye simu nyingine. Data ya browser inaweza kufutwa, hivyo hifadhi nakala.</p></section>
+<section class="card profile-card" id="my-profile" hidden aria-labelledby="profile-actions-title"><div class="profile-heading"><div><h2 id="profile-actions-title" tabindex="-1" data-en="Your profile on this device">Profile yako kwenye kifaa hiki</h2><p id="profile-name" class="active-step-label"></p></div><div id="profile-avatar" class="profile-avatar" aria-hidden="true">Z</div></div><p class="profile-help" data-en="Enter your name, phone and contact email below, then save your profile here. After saving, changes are saved automatically on this device. No account or password needed. Anyone using this browser can open the saved profile.">Jaza jina, simu na email ya mawasiliano hapa chini, kisha hifadhi profile hapa. Baada ya kuhifadhi, mabadiliko huhifadhiwa yenyewe kwenye kifaa hiki. Huhitaji akaunti wala nenosiri. Anayetumia browser hii anaweza kufungua profile iliyohifadhiwa.</p><div class="profile-actions"><button type="button" id="save-local-profile" data-en="Create / save profile">Tengeneza / hifadhi profile</button><button type="button" id="continue-profile" class="secondary" data-en="Edit my details">Hariri taarifa zangu</button><button type="button" id="delete-local-profile" class="secondary" data-en="Remove saved profile" hidden>Ondoa profile iliyohifadhiwa</button></div><p id="local-profile-status" class="status" role="status"></p><p class="profile-help" data-en="Download a profile backup under step 1 to move it to another phone. Browser data can be cleared, so keep a backup.">Pakua nakala ya profile kwenye hatua ya 1 ili kuihamisha kwenye simu nyingine. Data ya browser inaweza kufutwa, hivyo hifadhi nakala.</p></section>
 <nav class="step-nav" aria-label="Application steps"><button type="button" data-step="1" aria-current="step"><span class="step-number">1</span><span data-en="Profile">Taarifa</span></button><button type="button" data-step="2"><span class="step-number">2</span><span data-en="CV & letter">CV na barua</span></button><button type="button" data-step="3"><span class="step-number">3</span><span data-en="Send">Tuma</span></button></nav>
 
 <ol class="steps"><li data-en="Your details">Taarifa zako</li><li data-en="CV and letter">CV na barua</li><li data-en="Send by email">Tuma kwa email</li></ol>
 <section class="card" id="details" aria-labelledby="details-title">
 <h2 id="details-title" data-en="1. Your details">1. Taarifa zako</h2>
-<p class="muted" data-en="Only your name is required to begin. Your profile stays on this device when you choose Save profile. You can also download a backup. No account needed.">Jina pekee linahitajika kuanza. Profile hubaki kwenye kifaa hiki ukichagua Hifadhi profile. Unaweza pia kupakua nakala. Huhitaji akaunti.</p>
+<p class="muted" data-en="Your name, reachable phone number and contact email are required. The email can belong to someone who has given you permission. Your profile stays on this device when you save it. No account needed.">Jina, simu inayopatikana na email ya mawasiliano ni lazima. Email inaweza kuwa ya mtu aliyekupa ruhusa. Profile hubaki kwenye kifaa hiki ukiihifadhi. Huhitaji akaunti.</p>
 <p class="muted" data-en="Zanzibaba receives usage counts. Your name is shared only if you agree below. Your document contents and contact details are not sent.">Zanzibaba hupokea hesabu za matumizi. Jina lako hushirikiwa tu ukikubali hapa chini. Maandishi ya nyaraka na mawasiliano yako hayatumwi.</p>
 <form id="applicant-form">
 <label for="name" data-en="Full name">Jina kamili</label><input id="name" name="name" autocomplete="name" required maxlength="200">
@@ -61,10 +61,13 @@ html{scroll-padding-top:100px}button,input,select,textarea{-webkit-tap-highlight
 <div id="age-field" hidden><label for="age" data-en="Age in years">Umri kwa miaka</label><input id="age" name="age" type="number" inputmode="numeric" min="0" max="120" step="1" disabled></div>
 <p class="muted" data-en="These details are optional. Only the details you choose will appear on your CV. Choosing Prefer not to say leaves gender off the CV.">Taarifa hizi ni hiari. Ulizochagua pekee zitaonekana kwenye CV. Ukichagua Sipendi kutaja, jinsia haitawekwa kwenye CV.</p>
 </div></details>
-<div class="fields"><div><label for="phone" data-en="Phone (optional)">Simu (hiari)</label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="80"></div><div><label for="email" data-en="Email (optional)">Email (hiari)</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254"></div></div>
+<label for="phone" data-en="Reachable phone number (required)">Simu inayopatikana (lazima)</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required maxlength="30" aria-describedby="phone-help"><p id="phone-help" class="muted" data-en="Enter a phone number where you can be reached, for example 0757 225 779 or +255 757 225 779.">Weka namba unayopatikana, kwa mfano 0757 225 779 au +255 757 225 779.</p>
+<label for="email-owner" data-en="Whose email will you use?">Utatumia email ya nani?</label><select id="email-owner" name="email-owner"><option value="self" data-en="My own email">Email yangu</option><option value="other" data-en="Someone else’s email, with their permission">Email ya mtu mwingine, kwa ruhusa yake</option></select>
+<label for="email" data-en="Contact email (required)">Email ya mawasiliano (lazima)</label><input id="email" name="email" type="email" inputmode="email" autocomplete="email" required maxlength="254" aria-describedby="contact-email-help"><p id="contact-email-help" class="muted" data-en="Use an inbox you can check. Replies about your application may arrive at this address.">Tumia email ambayo unaweza kufuatilia. Majibu kuhusu maombi yako yanaweza kufika kwenye anuani hii.</p>
+<div id="email-permission-field" hidden><label class="check"><input id="email-permission" type="checkbox" disabled><span data-en="The owner has given me permission to use this email for my application and to receive replies. I have arranged how to get those replies.">Mwenye email ameniruhusu kuitumia kwa maombi yangu na kupokea majibu. Tumekubaliana namna nitakavyopata majibu hayo.</span></label></div>
 <details id="email-help"><summary data-en="No email? Learn what it is and create one">Huna email? Jua ni nini na uitengeneze</summary><div>
 <p data-en="Email is electronic mail: you use it to send and receive messages through the internet. Your email address is your contact address, for example jina@example.com.">Email ni barua pepe: unaitumia kutuma na kupokea ujumbe kupitia intaneti. Anuani yako ya email ni kama anuani ya kupokea barua, kwa mfano jina@example.com.</p>
-<p data-en="You need your own email to send your CV and letter to LARIS and receive any reply from the hiring team. You can prepare your documents here before creating an email account.">Unahitaji email yako kutuma CV na barua kwa LARIS na kupokea majibu yoyote kutoka kwa waajiri. Unaweza kuandaa nyaraka hapa kabla ya kufungua email.</p>
+<p data-en="You need a contact email to send your CV and letter and receive replies. Use your own email or choose someone else’s email with their permission. You can create your own account using the guide below.">Unahitaji email ya mawasiliano kutuma CV na barua na kupokea majibu. Tumia yako au chagua email ya mtu mwingine kwa ruhusa yake. Unaweza kufungua yako kwa mwongozo huu.</p>
 <p data-en="If you already have a Gmail address, you can use it. You do not need a new one. Otherwise, you can create one with Google:">Kama tayari una anuani ya Gmail, unaweza kuitumia; huhitaji mpya. Kama huna, unaweza kufungua kupitia Google:</p>
 <ol>
 <li data-en="Open the Google link below. If asked, choose Create account, then For my personal use.">Fungua kiungo cha Google hapa chini. Ukiulizwa, chagua Create account (Fungua akaunti), kisha For my personal use (Kwa matumizi yangu binafsi).</li>
@@ -134,7 +137,7 @@ html{scroll-padding-top:100px}button,input,select,textarea{-webkit-tap-highlight
 <script>
 'use strict';
 const $ = id => document.getElementById(id);
-const fields = {name:'name',gender:'gender',birthMode:'birth-mode',dob:'dob',age:'age',phone:'phone',email:'email',location:'location',education:'education',skills:'skills',experience:'experience',spokenLanguages:'spoken-languages',motivation:'motivation'};
+const fields = {name:'name',gender:'gender',birthMode:'birth-mode',dob:'dob',age:'age',phone:'phone',email:'email',emailOwner:'email-owner',location:'location',education:'education',skills:'skills',experience:'experience',spokenLanguages:'spoken-languages',motivation:'motivation'};
 const genderLabels = {female:{sw:'Mwanamke',en:'Female'},male:{sw:'Mwanaume',en:'Male'},other:{sw:'Nyingine',en:'Other'}};
 function todayDate() {
   const parts = new Intl.DateTimeFormat('en',{year:'numeric',month:'2-digit',day:'2-digit',timeZone:'Africa/Dar_es_Salaam'}).formatToParts(new Date());
@@ -157,6 +160,32 @@ function validPersonalData(d) {
     return /^\d{4}-\d{2}-\d{2}$/.test(d.dob) && !Number.isNaN(date.getTime()) && date.toISOString().slice(0,10) === d.dob && d.dob >= '1900-01-01' && d.dob <= todayDate();
   }
   return true;
+}
+function validRequiredContact(d) {
+  const phone = typeof d.phone === 'string' ? d.phone.trim() : '';
+  const digits = phone.replace(/\D/g,'');
+  const email = document.createElement('input'); email.type = 'email'; email.required = true; email.value = typeof d.email === 'string' ? d.email.trim() : '';
+  return /^[+0-9\s().-]+$/.test(phone) && digits.length >= 7 && digits.length <= 15 && email.checkValidity() && (d.emailOwner !== 'other' || d.emailPermission === true);
+}
+function updateContactValidity() {
+  const phone = $('phone').value.trim(), digits = phone.replace(/\D/g,'');
+  const validPhone = !phone || (/^[+0-9\s().-]+$/.test(phone) && digits.length >= 7 && digits.length <= 15);
+  $('phone').setCustomValidity(validPhone ? '' : (document.documentElement.lang === 'en' ? 'Enter a reachable phone number with 7 to 15 digits.' : 'Weka simu inayopatikana yenye tarakimu 7 hadi 15.'));
+}
+function updateEmailOwner() {
+  const other = $('email-owner').value === 'other';
+  $('email-permission-field').hidden = !other; $('email-permission').disabled = !other; $('email-permission').required = other;
+  if (!other) $('email-permission').checked = false;
+}
+$('phone').addEventListener('input',updateContactValidity);
+$('email-owner').addEventListener('change',updateEmailOwner);
+function requireContactFields() {
+  updateContactValidity();
+  if (validRequiredContact(values()) && $('name').value.trim()) return true;
+  if (window.goStep) window.goStep(1,false);
+  $('applicant-form').reportValidity();
+  say('form-status','Jina, simu na email ni lazima. Kwa email ya mtu mwingine, thibitisha ruhusa yake.','Name, phone and email are required. For someone else’s email, confirm their permission.');
+  return false;
 }
 let language = 'sw';
 let documentLanguage = 'sw';
@@ -220,15 +249,17 @@ function setLanguage(next) {
   $('ui-sw').setAttribute('aria-pressed', String(language === 'sw'));
   $('lang-toggle').setAttribute('aria-pressed', String(language === 'en'));
   $('photo-preview').alt = language === 'sw' ? 'Picha ya mwombaji' : 'Applicant photo';
+  updateContactValidity();
   for (const id of ['form-status','profile-status','photo-status','document-status','apply-status']) $(id).textContent = '';
 }
 $('lang-toggle').onclick = () => setLanguage('en');
 $('ui-sw').onclick = () => setLanguage('sw');
-function values() { return Object.fromEntries(Object.entries(fields).map(([key,id]) => [key,$(id).value.trim()])); }
+function values() { return {...Object.fromEntries(Object.entries(fields).map(([key,id]) => [key,$(id).value.trim()])),emailPermission:$('email-permission').checked}; }
 function emailLink() {
   const name = $('name').value.trim();
   const body = documentLanguage === 'sw' ? `Habari Timu ya Uajiri,\n\nNinaomba nafasi ya kazi katika mradi wa LARIS. Nitaambatisha CV na barua yangu ya maombi.\n\nTaarifa za nafasi hii nimezipata kupitia Zanzibaba Company Limited (https://survey.zanzibaba.com/).\n\nAsanteni,\n${name}` : `Dear Hiring Team,\n\nI would like to apply for work with the LARIS project. I will attach my CV and cover letter.\n\nI learned about this opportunity through Zanzibaba Company Limited (https://survey.zanzibaba.com/).\n\nKind regards,\n${name}`;
-  $('mailto').href = 'mailto:laris.zanzibar@proton.me?subject=' + encodeURIComponent('LARIS Job Application' + (name ? ' - ' + name : '')) + '&body=' + encodeURIComponent(body);
+  const contactNote = $('email-owner').value === 'other' ? (documentLanguage === 'sw' ? '\n\nEmail ya mawasiliano ninayotumia ni ya mtu aliyenipa ruhusa ya kuitumia kwa maombi na majibu.' : '\n\nI am using this contact email with its owner’s permission for this application and replies.') : '';
+  $('mailto').href = 'mailto:laris.zanzibar@proton.me?subject=' + encodeURIComponent('LARIS Job Application' + (name ? ' - ' + name : '')) + '&body=' + encodeURIComponent(body+contactNote);
 }
 function revealDocuments(focus = false) {
   $('documents').hidden = false;
@@ -243,7 +274,8 @@ function saveCurrentDraft() {
 function makeDraft(lang) {
   const d = documentValues(lang), sw = lang === 'sw';
   const labels = sw ? {personal:'Taarifa binafsi',education:'Elimu',skills:'Ujuzi na shughuli',experience:'Uzoefu',spokenLanguages:'Lugha'} : {personal:'Personal details',education:'Education',skills:'Skills and activities',experience:'Experience',spokenLanguages:'Languages'};
-  const contact = [d.location,d.phone,d.email].filter(Boolean).join('\n');
+  const contactEmail = d.emailOwner === 'other' ? d.email+(sw ? ' (email ya mtu mwingine kwa ruhusa)' : ' (email used with its owner’s permission)') : d.email;
+  const contact = [d.location,d.phone,contactEmail].filter(Boolean).join('\n');
   const cv = [d.name,sw ? 'WASIFU BINAFSI' : 'CURRICULUM VITAE',contact,...Object.entries(labels).filter(([key]) => d[key]).map(([key,label]) => label.toUpperCase()+'\n'+d[key])].filter(Boolean).join('\n\n');
   const date = new Intl.DateTimeFormat(sw ? 'sw-TZ' : 'en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'Africa/Dar_es_Salaam'}).format(new Date());
   const letter = [[d.name,contact].filter(Boolean).join('\n'),date,sw ? 'Timu ya Uajiri\nIGN FI — Mradi wa LARIS\nZanzibar\nlaris.zanzibar@proton.me' : 'The Hiring Team\nIGN FI — LARIS Project\nZanzibar\nlaris.zanzibar@proton.me',sw ? 'Ndugu Timu ya Uajiri,' : 'Dear Hiring Team,',sw ? 'YAH: MAOMBI YA KAZI — MRADI WA LARIS' : 'RE: JOB APPLICATION — LARIS PROJECT',(sw ? ['Ninaomba nafasi ya kazi katika mradi wa LARIS Zanzibar. Nimeambatisha CV yangu kwa ajili ya kuzingatiwa.','Naomba kuzingatiwa kwa nafasi ya kazi katika mradi wa LARIS Zanzibar. Taarifa zangu zipo katika CV iliyoambatishwa.','Ninawasilisha maombi yangu ya kazi kwa mradi wa LARIS Zanzibar, pamoja na CV yangu.','Ningependa kuomba kazi katika mradi wa LARIS Zanzibar. Tafadhali pokea barua hii na CV yangu.','Kupitia barua hii, ninaomba kuzingatiwa kwa kazi katika mradi wa LARIS Zanzibar. Nimeambatisha CV yangu.','Naandika kuwasilisha maombi ya kazi katika mradi wa LARIS Zanzibar. CV yangu ina taarifa zaidi kuhusu mimi.'] : ['I would like to apply for work with the LARIS project in Zanzibar. My CV is attached for your consideration.','Please consider my application for work with the LARIS project in Zanzibar. My background is outlined in the attached CV.','I am submitting my application for work with the LARIS project in Zanzibar, together with my CV.','I wish to apply for work with the LARIS project in Zanzibar. Please find my application and CV enclosed.','I am writing to express my interest in work with the LARIS project in Zanzibar. I have attached my CV.','I would appreciate consideration for work with the LARIS project in Zanzibar. Further details about me are in my CV.'])[wordingVariant],d.education ? (sw ? 'Elimu yangu: ' : 'My education: ')+d.education+'.' : '',d.skills ? (sw ? 'Ujuzi na shughuli zangu: ' : 'My skills and activities: ')+d.skills+'.' : '',d.motivation ? (sw ? 'Sababu yangu ya kuomba: ' : 'My reason for applying: ')+d.motivation : '',sw ? 'Taarifa za nafasi hii nimezipata kupitia Zanzibaba Company Limited (https://survey.zanzibaba.com/).' : 'I learned about this opportunity through Zanzibaba Company Limited (https://survey.zanzibaba.com/).',(sw ? ['Asanteni kwa muda wenu na kwa kuzingatia maombi yangu.','Nashukuru kwa nafasi ya kuwasilisha maombi yangu.','Nitashukuru kwa kuzingatiwa kwa maombi haya.'] : ['Thank you for your time and consideration.','Thank you for the opportunity to submit my application.','I would be grateful for your consideration.'])[wordingVariant % 3],(sw ? 'Wako mwaminifu,' : 'Yours faithfully,')+'\n'+d.name].filter(Boolean).join('\n\n');
@@ -285,6 +317,7 @@ $('doc-en').onclick = () => selectDocumentLanguage('en');
 for (const id of ['cv-text','letter-text']) $(id).addEventListener('input', () => { saveCurrentDraft(); renderDocuments(); resetReview(); });
 $('applicant-form').addEventListener('submit', event => {
   event.preventDefault();
+  if (!requireContactFields()) return;
   if (!validPersonalData(values())) { say('form-status','Hakiki tarehe ya kuzaliwa au umri uliojaza.','Check the date of birth or age you entered.'); return; }
   if (!values().name) { say('form-status','Jaza jina lako kwanza.','Enter your name first.'); $('name').focus(); return; }
   if (($('cv-text').value || $('letter-text').value) && !confirm(language === 'sw' ? 'Kutengeneza tena kutabadilisha rasimu za lugha zote ulizohariri. Endelea?' : 'Generating again will replace your edited drafts in both languages. Continue?')) return;
@@ -322,6 +355,7 @@ async function readPhoto(file) {
 for (const id of ['photo-upload','photo-camera']) $(id).onchange = event => readPhoto(event.target.files[0]);
 $('photo-remove').onclick = () => { ++photoTask; applicantPhoto = null; $('photo-upload').value = ''; $('photo-camera').value = ''; showPhoto(); say('photo-status','Picha imeondolewa.','Photo removed.'); };
 function printDocuments(kind) {
+  if (!requireContactFields()) return;
   const ids = kind === 'both' ? ['cv-text','letter-text'] : [kind === 'cv' ? 'cv-text' : 'letter-text'];
   if (ids.some(id => !$(id).value.trim())) { say('document-status','Tengeneza na kagua nyaraka kwanza.','Create and review your documents first.'); return; }
   renderDocuments();
@@ -336,7 +370,8 @@ function printDocuments(kind) {
 $('cv-print').onclick = () => printDocuments('cv');
 $('letter-print').onclick = () => printDocuments('letter');
 $('print').onclick = () => printDocuments('both');
-$('mailto').addEventListener('click', () => {
+$('mailto').addEventListener('click', event => {
+  if (!requireContactFields()) { event.preventDefault(); return; }
   window.dispatchEvent(new CustomEvent('laris:event',{detail:{event:'email_clicked'}}));
   emailLink();
   if (!$('reviewed').checked) say('apply-status','Kagua CV na barua, hifadhi PDF na uziambatishe kabla ya kutuma.','Review the CV and letter, save the PDFs and attach them before sending.');
@@ -351,8 +386,11 @@ $('export').onclick = () => {
 // Validate the whole profile before changing any fields; file and device restore share this path.
 async function applyApplicantProfile(d) {
     if (!d || ![1,2,3,4,5].includes(d.version)) throw Error('version');
-    const limits = {name:200,gender:20,birthMode:5,dob:10,age:3,phone:80,email:254,location:300,education:2000,skills:4000,experience:4000,spokenLanguages:500,motivation:4000,cvText:20000,letterText:20000,draft:40000};
+    const limits = {name:200,gender:20,birthMode:5,dob:10,age:3,phone:80,email:254,emailOwner:5,location:300,education:2000,skills:4000,experience:4000,spokenLanguages:500,motivation:4000,cvText:20000,letterText:20000,draft:40000};
     for (const [key,limit] of Object.entries(limits)) if (d[key] !== undefined && (typeof d[key] !== 'string' || d[key].length > limit)) throw Error(key);
+    if (d.emailOwner !== undefined && !['self','other'].includes(d.emailOwner)) throw Error('email owner');
+    if (d.emailPermission !== undefined && typeof d.emailPermission !== 'boolean') throw Error('email permission');
+    if (d.emailOwner === 'other' && d.emailPermission !== true) throw Error('email permission');
     if (!validPersonalData(d)) throw Error('personal data');
     for (const key of ['name','education','skills']) if (typeof d[key] !== 'string') throw Error(key);
     if (d.version >= 4) {
@@ -375,6 +413,9 @@ async function applyApplicantProfile(d) {
     let cv = d.cvText || '', letter = d.letterText || '';
     if (!cv && !letter && d.draft) { const marker = d.draft.indexOf('APPLICATION LETTER'); if (marker >= 0) { cv = d.draft.slice(0,marker).trim(); letter = d.draft.slice(marker).trim(); } else cv = d.draft; }
     for (const [key,id] of Object.entries(fields)) $(id).value = d[key] || '';
+    $('email-owner').value = d.emailOwner || 'self';
+    $('email-permission').checked = d.emailPermission === true;
+    updateEmailOwner(); updateContactValidity();
     updateBirthFields();
     clearChoices();
     if (d.version === 5) {

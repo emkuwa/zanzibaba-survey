@@ -46,9 +46,9 @@
   function profileSnapshot() { return JSON.stringify(collectApplicantProfile()); }
   function saveProfile(explicit = false) {
     if (restoring) return;
-    if (!get('name').value.trim() || !validPersonalData(values())) {
-      if (explicit) { window.goStep(1); expandInvalidFields(); get('applicant-form').reportValidity(); message('local-profile-status','Jaza jina na hakiki tarehe au umri kwanza.','Enter your name and check the date of birth or age first.'); }
-      else message('local-profile-status','Mabadiliko haya hayajahifadhiwa bado. Hakiki jina, tarehe au umri.','These changes are not saved yet. Check the name, birth date or age.');
+    if (!get('name').value.trim() || !validRequiredContact(values()) || !validPersonalData(values())) {
+      if (explicit) { window.goStep(1); expandInvalidFields(); get('applicant-form').reportValidity(); message('local-profile-status','Jaza jina, simu na email. Hakiki ruhusa ya email na tarehe au umri.','Enter your name, phone and email. Check email permission and date of birth or age.'); }
+      else message('local-profile-status','Mabadiliko haya hayajahifadhiwa bado. Hakiki jina, simu, email na taarifa za hiari.','These changes are not saved yet. Check your name, phone, email and optional details.');
       return;
     }
     try {
