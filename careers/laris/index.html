@@ -285,6 +285,9 @@ function textElement(tag,text,className) {
   const el = document.createElement(tag); el.textContent = text; if (className) el.className = className; return el;
 }
 function renderDocuments() {
+  const cleanReferral = text => text.replaceAll('Zanzibaba Company Limited (https://survey.zanzibaba.com/).','Zanzibaba Company Limited.');
+  for (const id of ['cv-text','letter-text']) $(id).value = cleanReferral($(id).value);
+  for (const draft of Object.values(documentDrafts)) for (const key of ['cvText','letterText']) if (typeof draft[key] === 'string') draft[key] = cleanReferral(draft[key]);
   const cv = $('cv-preview'), letter = $('letter-preview'); cv.replaceChildren(); letter.replaceChildren();
   cv.className = 'paper cv-'+cvLayout; letter.className = 'paper letter-'+letterLayout;
   updateTemplateControls();
