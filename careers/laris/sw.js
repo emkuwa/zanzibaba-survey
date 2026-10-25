@@ -1,5 +1,5 @@
 'use strict';
-const CACHE_NAME = 'zanzibaba-laris-shell-v3';
+const CACHE_NAME = 'zanzibaba-laris-shell-v4';
 const ROOT = '/careers/laris/';
 const SHELL = [ROOT, ROOT+'app.js', ROOT+'analytics-config.js', ROOT+'analytics.js', ROOT+'manifest.webmanifest', ROOT+'icon-192.png', ROOT+'icon-512.png'];
 self.addEventListener('install',event => { event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting())); });
