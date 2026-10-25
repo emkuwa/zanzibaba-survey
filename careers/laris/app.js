@@ -54,17 +54,17 @@
     try {
       localStorage.setItem(PROFILE_KEY,profileSnapshot()); savedOnDevice = true; window.syncProfileView();
       if (explicit) window.dispatchEvent(new CustomEvent('laris:event',{detail:{event:'profile_saved'}}));
-      message('local-profile-status','Profile imehifadhiwa kwenye kifaa hiki. Mabadiliko yataendelea kuhifadhiwa yenyewe.','Profile saved on this device. Further changes will be saved automatically.');
-    } catch { message('local-profile-status','Kifaa hakijaweza kuhifadhi profile. Tumia Pakua profile chini ya hatua ya 1 kuhifadhi nakala.','This device could not save the profile. Use Download profile under step 1 to keep a backup.'); }
+      message('local-profile-status','Taarifa zako zimehifadhiwa kwenye simu hii. Mabadiliko mapya yatahifadhiwa yenyewe.','Profile saved on this device. Further changes will be saved automatically.');
+    } catch { message('local-profile-status','Taarifa hazijahifadhiwa kwenye simu hii. Bonyeza Pakua taarifa zangu katika hatua ya 1.','This device could not save the profile. Use Download profile under step 1 to keep a backup.'); }
   }
   function queueSave() { window.syncProfileView(); clearTimeout(savingTimer); if (savedOnDevice && !restoring) savingTimer = setTimeout(() => saveProfile(),350); }
   get('save-local-profile').onclick = () => saveProfile(true);
   get('save-profile-from-form').onclick = () => saveProfile(true);
   get('delete-local-profile').onclick = () => {
-    if (!confirm(document.documentElement.lang === 'en' ? 'Remove the profile saved on this device? Downloaded files will remain.' : 'Ondoa profile iliyohifadhiwa kwenye kifaa hiki? Faili ulizopakua zitabaki.')) return;
+    if (!confirm(document.documentElement.lang === 'en' ? 'Remove the profile saved on this device? Downloaded files will remain.' : 'Ufute taarifa zilizohifadhiwa kwenye simu hii? Faili ulizopakua zitabaki.')) return;
     clearTimeout(savingTimer);
-    try { localStorage.removeItem(PROFILE_KEY); savedOnDevice = false; window.syncProfileView(); message('local-profile-status','Profile ya kifaa imeondolewa. Taarifa zilizo kwenye fomu hazitahifadhiwa mpaka uchague Hifadhi tena.','Saved profile removed. Current form details will not be saved unless you choose Save again.'); }
-    catch { message('local-profile-status','Profile haijaondolewa. Jaribu tena au futa data ya tovuti kwenye browser.','Profile could not be removed. Try again or clear this site’s browser data.'); }
+    try { localStorage.removeItem(PROFILE_KEY); savedOnDevice = false; window.syncProfileView(); message('local-profile-status','Taarifa zilizohifadhiwa zimefutwa. Ukihitaji kuzihifadhi tena, bonyeza Hifadhi.','Saved profile removed. Current form details will not be saved unless you choose Save again.'); }
+    catch { message('local-profile-status','Taarifa hazijafutwa. Jaribu tena.','Profile could not be removed. Try again or clear this site’s browser data.'); }
   };
   for (const event of ['input','change','submit']) get('main').addEventListener(event,queueSave);
   get('documents').addEventListener('click',queueSave);
@@ -113,15 +113,15 @@
     window.syncProfileView(); connectionState(); installState();
     let raw;
     try { raw = localStorage.getItem(PROFILE_KEY); }
-    catch { message('local-profile-status','Hifadhi ya browser haipatikani. Bado unaweza kuandaa nyaraka na kupakua profile.','Browser storage is unavailable. You can still prepare documents and download your profile.'); }
+    catch { message('local-profile-status','Simu hii imeshindwa kuhifadhi taarifa. Unaweza kuendelea na kupakua faili la taarifa zako.','Browser storage is unavailable. You can still prepare documents and download your profile.'); }
     if (raw) {
       restoring = true; get('main').inert = true;
       try {
         if (raw.length > 1200000) throw Error('size');
         await applyApplicantProfile(JSON.parse(raw)); savedOnDevice = true; window.syncProfileView();
-        message('app-status','Karibu tena, '+get('name').value+'. Profile yako imerudishwa.','Welcome back, '+get('name').value+'. Your profile has been restored.');
-        message('local-profile-status','Karibu tena. Profile yako imerudishwa kutoka kifaa hiki.','Welcome back. Your profile has been restored from this device.');
-      } catch { savedOnDevice = true; window.syncProfileView(); message('local-profile-status','Profile iliyohifadhiwa haikufunguka. Unaweza kuondoa nakala ya kifaa au kurudisha faili la profile.','The saved profile could not be opened. Remove the device copy or import a profile backup.'); }
+        message('app-status','Karibu tena, '+get('name').value+'. Taarifa zako zimefunguliwa.','Welcome back, '+get('name').value+'. Your profile has been restored.');
+        message('local-profile-status','Karibu tena. Taarifa zako zimefunguliwa kutoka simu hii.','Welcome back. Your profile has been restored from this device.');
+      } catch { savedOnDevice = true; window.syncProfileView(); message('local-profile-status','Taarifa ulizohifadhi hazijafunguka. Unaweza kuzifuta hapa au kufungua faili ulilopakua.','The saved profile could not be opened. Remove the device copy or import a profile backup.'); }
       finally { restoring = false; get('main').inert = false; }
     }
     const requested = {'#details':1,'#documents':2,'#apply':3}[location.hash] || 1;
