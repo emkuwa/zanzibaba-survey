@@ -10,6 +10,8 @@
 <link rel="apple-touch-icon" href="/careers/laris/icon-192.png">
 <link rel="icon" type="image/png" href="/careers/laris/icon-192.png">
 <script src="/careers/laris/app.js" defer></script>
+<script src="/careers/laris/analytics-config.js" defer></script>
+<script src="/careers/laris/analytics.js" defer></script>
 <meta name="robots" content="noindex">
 <meta name="description" content="Zanzibaba Career Assistant: andaa CV na barua fupi ya maombi ya LARIS Zanzibar.">
 <title>LARIS Career Assistant | Zanzibaba</title>
@@ -49,8 +51,10 @@ html{scroll-padding-top:100px}button,input,select,textarea{-webkit-tap-highlight
 <section class="card" id="details" aria-labelledby="details-title">
 <h2 id="details-title" data-en="1. Your details">1. Taarifa zako</h2>
 <p class="muted" data-en="Only your name is required to begin. Your profile stays on this device when you choose Save profile. You can also download a backup. No account needed.">Jina pekee linahitajika kuanza. Profile hubaki kwenye kifaa hiki ukichagua Hifadhi profile. Unaweza pia kupakua nakala. Huhitaji akaunti.</p>
+<p class="muted" data-en="Zanzibaba receives usage counts. Your name is shared only if you agree below. Your document contents and contact details are not sent.">Zanzibaba hupokea hesabu za matumizi. Jina lako hushirikiwa tu ukikubali hapa chini. Maandishi ya nyaraka na mawasiliano yako hayatumwi.</p>
 <form id="applicant-form">
 <label for="name" data-en="Full name">Jina kamili</label><input id="name" name="name" autocomplete="name" required maxlength="200">
+<label class="check"><input id="name-analytics" type="checkbox"><span data-en="I agree to share my name and usage steps privately with Zanzibaba. I can untick this to remove my name; this does not affect my application.">Nakubali jina langu na hatua nilizofanya zionekane kwa Zanzibaba pekee. Ninaweza kuondoa tiki ili kuondoa jina; hii haiathiri maombi yangu.</span></label>
 <details class="optional-personal"><summary data-en="Gender and age (optional)">Jinsia na umri (hiari)</summary><div><label for="gender" data-en="Gender (optional)">Jinsia (hiari)</label><select id="gender" name="gender"><option value="" data-en="Choose (optional)">Chagua (hiari)</option><option value="female" data-en="Female">Mwanamke</option><option value="male" data-en="Male">Mwanaume</option><option value="other" data-en="Other">Nyingine</option><option value="undisclosed" data-en="Prefer not to say">Sipendi kutaja</option></select>
 <label for="birth-mode" data-en="Date of birth or age (optional)">Tarehe ya kuzaliwa au umri (hiari)</label><select id="birth-mode" name="birth-mode"><option value="" data-en="Do not include">Usiweke</option><option value="dob" data-en="Use date of birth">Weka tarehe ya kuzaliwa</option><option value="age" data-en="Use age only">Weka umri pekee</option></select>
 <div id="dob-field" hidden><label for="dob" data-en="Date of birth">Tarehe ya kuzaliwa</label><input id="dob" name="dob" type="date" autocomplete="bday" min="1900-01-01" disabled></div>
@@ -91,6 +95,7 @@ html{scroll-padding-top:100px}button,input,select,textarea{-webkit-tap-highlight
 <label for="import" data-en="Load saved profile (JSON)">Rudisha profile iliyohifadhiwa (JSON)</label><input id="import" type="file" accept=".json,application/json">
 <p class="status" id="profile-status" role="status"></p>
 </div></details>
+<details id="analytics-settings"><summary data-en="Usage statistics and name consent">Takwimu za matumizi na ridhaa ya jina</summary><div><p class="muted" data-en="Zanzibaba counts visits and actions such as creating documents and opening Print or email. CV contents, letters, photos, phone numbers, birth dates and email addresses are not sent. Device counts are estimates, not verified people.">Zanzibaba huhesabu ziara na hatua kama kutengeneza nyaraka na kufungua Print au email. Maandishi ya CV, barua, picha, simu, tarehe za kuzaliwa na anuani za email havitumwi. Idadi ya vifaa ni makadirio, si watu waliothibitishwa.</p><label class="check"><input id="usage-analytics" type="checkbox" checked><span data-en="Allow usage counts without document contents">Ruhusu takwimu za matumizi bila nyaraka</span></label><p id="analytics-status" class="status" role="status"></p></div></details>
 </section>
 <section class="card documents" id="documents" aria-labelledby="documents-title" hidden>
 <h2 id="documents-title" tabindex="-1" data-en="2. Review your CV and letter">2. Kagua CV na barua yako</h2>
@@ -123,7 +128,7 @@ html{scroll-padding-top:100px}button,input,select,textarea{-webkit-tap-highlight
 </section>
 <noscript><p class="card">Washa JavaScript ili kutengeneza CV na barua au kuhifadhi profile. Unaweza kuandaa nyaraka zako mwenyewe na kutuma kwa email iliyo hapo juu. Enable JavaScript to use the document builder.</p></noscript>
 </main>
-<footer>Zanzibaba Company Limited · <a href="tel:+255757225779">0757 225 779</a></footer>
+<footer><a href="/careers/laris/admin/" data-en="Usage dashboard (admin)">Dashboard ya matumizi (msimamizi)</a><br>Zanzibaba Company Limited · <a href="tel:+255757225779">0757 225 779</a></footer>
 <nav class="mobile-bottom" aria-label="Mobile application steps"><button type="button" data-step="1" aria-current="step" data-en="1. Profile">1. Taarifa</button><button type="button" data-step="2" data-en="2. CV & letter">2. CV na barua</button><button type="button" data-step="3" data-en="3. Send">3. Tuma</button></nav>
 <div id="print-area"></div>
 <script>
@@ -200,6 +205,7 @@ $('remix-wording').onclick = () => {
   for (const lang of ['sw','en']) { if (!documentDrafts[lang]) documentDrafts[lang] = makeDraft(lang); else documentDrafts[lang].letterText = makeDraft(lang).letterText; }
   $('letter-text').value = documentDrafts[documentLanguage].letterText;
   renderDocuments(); resetReview();
+  window.dispatchEvent(new CustomEvent('laris:event',{detail:{event:'letter_generated'}}));
   say('template-status','Barua imepata maneno mapya. Kagua preview kabla ya kutuma.','Letter wording updated. Review the preview before sending.');
 };
 
@@ -287,6 +293,8 @@ $('applicant-form').addEventListener('submit', event => {
   // The old editor values must not overwrite the newly generated draft.
   $('cv-text').value = ''; $('letter-text').value = '';
   selectDocumentLanguage(documentLanguage,false); revealDocuments(true);
+  window.dispatchEvent(new CustomEvent('laris:event',{detail:{event:'cv_generated'}}));
+  window.dispatchEvent(new CustomEvent('laris:event',{detail:{event:'letter_generated'}}));
 });
 function showPhoto() {
   $('photo-preview').hidden = !applicantPhoto;
@@ -322,12 +330,14 @@ function printDocuments(kind) {
     const source = $(id === 'cv-text' ? 'cv-preview' : 'letter-preview');
     const copy = source.cloneNode(true); copy.removeAttribute('id'); area.append(copy);
   }
+  for (const id of ids) window.dispatchEvent(new CustomEvent('laris:event',{detail:{event:id === 'cv-text' ? 'print_cv_opened' : 'print_letter_opened'}}));
   window.print();
 }
 $('cv-print').onclick = () => printDocuments('cv');
 $('letter-print').onclick = () => printDocuments('letter');
 $('print').onclick = () => printDocuments('both');
 $('mailto').addEventListener('click', () => {
+  window.dispatchEvent(new CustomEvent('laris:event',{detail:{event:'email_clicked'}}));
   emailLink();
   if (!$('reviewed').checked) say('apply-status','Kagua CV na barua, hifadhi PDF na uziambatishe kabla ya kutuma.','Review the CV and letter, save the PDFs and attach them before sending.');
 });

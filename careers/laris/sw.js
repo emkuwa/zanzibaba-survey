@@ -1,7 +1,7 @@
 'use strict';
-const CACHE_NAME = 'zanzibaba-laris-shell-v1';
+const CACHE_NAME = 'zanzibaba-laris-shell-v2';
 const ROOT = '/careers/laris/';
-const SHELL = [ROOT, ROOT+'app.js', ROOT+'manifest.webmanifest', ROOT+'icon-192.png', ROOT+'icon-512.png'];
+const SHELL = [ROOT, ROOT+'app.js', ROOT+'analytics-config.js', ROOT+'analytics.js', ROOT+'manifest.webmanifest', ROOT+'icon-192.png', ROOT+'icon-512.png'];
 self.addEventListener('install',event => { event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate',event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith('zanzibaba-laris-shell-') && key !== CACHE_NAME).map(key => caches.delete(key)))).then(() => self.clients.claim())); });
 // Cache only this public application shell. Profiles are never put in the service-worker cache.

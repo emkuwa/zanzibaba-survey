@@ -53,6 +53,7 @@
     }
     try {
       localStorage.setItem(PROFILE_KEY,profileSnapshot()); savedOnDevice = true; window.syncProfileView();
+      if (explicit) window.dispatchEvent(new CustomEvent('laris:event',{detail:{event:'profile_saved'}}));
       message('local-profile-status','Profile imehifadhiwa kwenye kifaa hiki. Mabadiliko yataendelea kuhifadhiwa yenyewe.','Profile saved on this device. Further changes will be saved automatically.');
     } catch { message('local-profile-status','Kifaa hakijaweza kuhifadhi profile. Tumia Pakua profile chini ya hatua ya 1 kuhifadhi nakala.','This device could not save the profile. Use Download profile under step 1 to keep a backup.'); }
   }
@@ -75,6 +76,7 @@
 
   function shareFallback() { get('share-help').hidden = false; focusSection(get('share-help')); }
   get('share-app').onclick = async () => {
+    window.dispatchEvent(new CustomEvent('laris:event',{detail:{event:'share_clicked'}}));
     if (navigator.share) {
       try { await navigator.share({title:'Zanzibaba Career Assistant — LARIS',text:document.documentElement.lang === 'en' ? 'Prepare your LARIS CV and application letter with Zanzibaba.' : 'Andaa CV na barua ya maombi ya LARIS kupitia Zanzibaba.',url:APP_URL}); return; }
       catch (error) { if (error.name === 'AbortError') return; }
@@ -89,7 +91,7 @@
     if (installed) { message('install-app','App imewekwa','App installed'); get('install-app').setAttribute('aria-label',document.documentElement.lang === 'en' ? 'App installed — view help' : 'App imewekwa — angalia maelekezo'); }
   }
   window.addEventListener('beforeinstallprompt',event => { event.preventDefault(); installPrompt = event; });
-  window.addEventListener('appinstalled',() => { installed = true; installPrompt = null; installState(); message('install-status','App imewekwa. Unaweza kuifungua kwenye Home Screen.','App installed. You can open it from your home screen.'); });
+  window.addEventListener('appinstalled',() => { window.dispatchEvent(new CustomEvent('laris:event',{detail:{event:'app_installed'}})); installed = true; installPrompt = null; installState(); message('install-status','App imewekwa. Unaweza kuifungua kwenye Home Screen.','App installed. You can open it from your home screen.'); });
   get('install-app').onclick = async () => {
     if (installPrompt && !installed) {
       const prompt = installPrompt; installPrompt = null;
@@ -131,5 +133,5 @@
     }
     checkConnection();
   }
-  start().catch(() => { get('main').inert = false; message('app-status','Tumia fomu hapa chini kuendelea.','Use the form below to continue.'); });
+  window.larisAppReady = start().catch(() => { get('main').inert = false; message('app-status','Tumia fomu hapa chini kuendelea.','Use the form below to continue.'); });
 })();
